@@ -1,2 +1,200 @@
-hi
-<a href="https://github.com/nikov">尼科夫</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谭景元的主页</title>
+    <link rel="stylesheet" href="/tapple/main.css">
+    <link rel="stylesheet" href="style.css">
+    <base target="_blank">
+</head>
+
+<body>
+    <div id="loadback"
+        style="background-color:#000;width:100%;height:100%;z-index:105;position:fixed;transition:3s;top:0;left:0;">
+        <p id="loadbacktext"
+            style="width:100%;position:absolute;left:0;font-size:50px;transition:2s;color:#fff;height:100px;top:calc(50% - 80px);text-align:center;opacity:0;margin:0;">
+            欢迎来到谭景元的主页</p>
+        <p id="loadbacktexteng"
+            style="width:100%;position:absolute;left:0;font-size:25px;transition:2s;color:#fff;height:50px;top:50%;text-align:center;opacity:0;margin:0;">
+            Welcome to Tan Jingyuan's homepage</p>
+        <script>setTimeout(() => { document.getElementById('loadbacktext').style.opacity = 1; document.getElementById('loadbacktexteng').style.opacity = 1; }, 100);
+            setTimeout(() => { document.getElementById('loadbacktext').style.opacity = 0; document.getElementById('loadbacktexteng').style.opacity = 0; }, 2100);
+            setTimeout(() => {
+                document.getElementById('loadbacktext').innerText = '正在加载...'; document.getElementById('loadbacktexteng').innerText = 'Loading...';
+                document.getElementById('loadbacktext').style.opacity = 1; document.getElementById('loadbacktexteng').style.opacity = 1;
+            }, 4100);
+            let bcci = setInterval(() => { document.getElementById('loadback').style.backgroundColor = '#0c4574'; setTimeout(() => { document.getElementById('loadback').style.backgroundColor = '#000'; }, 3000); }, 6000);
+            document.body.onload = () => { document.getElementById('loadback').style.opacity = 0; setTimeout(() => { document.getElementById('loadback').style.display = 'none'; }, 3000); clearInterval(bcci) };</script>
+    </div>
+    <script src="/tapple/jq.min.js"></script>
+    <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
+        <p class="tit">你好!👋<span class="eng">Hello!👋</span></p>
+        <div class="body">
+            <p>没错，我就是著名的谭景元😁<span class="eng">Yes, I am the famous Tan Jingyuan😁</span></p>
+            <p>什么？你不认识我？造化低了🤨<span class="eng">What? You don't know me? Suck🤨</span></p>
+        </div>
+    </div>
+    <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
+        <p class="tit">自我介绍一下...咳咳<span class="eng">Let me introduce myself...ahem</span></p>
+        <div class="body">
+            <p>姓名: 谭景元<span class="eng">Name: Tan Jingyuan</span></p>
+            <p>生日: 2009/05/20<span class="eng">Birthday: May 20,2009</span></p>
+            <p>年龄: 自己算<span class="eng">Age: calculate yourself</span></p>
+            <s>伟大的马克思主义者，伟大的无产阶级革命家、政治家、军事家、外交家，久经考验的共产主义战士，中国特色社会主义伟大事业的杰出领导者
+                <span class="eng">A great Marxist, a great proletarian revolutionist, politician, militarist and
+                    diplomat, a well tested communist soldier, and an outstanding leader in the great cause of socialism
+                    with Chinese characteristics.</span></s>
+            <p>2015年就读于成都市实验小学<span class="eng">Studied in Chengdu Experimental Primary School in 2015.</span></p>
+            <p>2021年就读于成都市七中育才汇源校区<span class="eng">Studied in Chengdu No.7 Yucai Middle School Huiyuan Campus in
+                    2021.</span></p>
+        </div>
+    </div>
+    <div class="box card jt" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
+        <p class="tit"><span class="shine" style="--color:#2374b7;--colorshine:#76cfff;--speed:4;">精通各种语言</span><span class="eng">Be proficient in many languages</span></p>
+        <div class="body">
+            <div><p style="margin: 0;">Scratch</p>
+                <div><div><div style="background: #ffab19;width: 99%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Markdown</p>
+                <div><div><div style="background: #000;width: 80%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">CSS</p>
+                <div><div><div style="background: #4061e8;width: 75%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Html</p>
+                <div><div><div style="background: #d66022;width: 65%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Python</p>
+                <div><div><div style="background: #4db8a6;width: 55%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Javascript</p>
+                <div><div><div style="background: #e9c900;width: 40%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Cmd</p>
+                <div><div><div style="background: #444;width: 37%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">C#</p>
+                <div><div><div style="background: #64047f;width: 35%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">C++</p>
+                <div><div><div style="background: #6c94c9;width: 33%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Vbs</p>
+                <div><div><div style="background: #a2e0ff;width: 10%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Powershell</p>
+                <div><div><div style="background: #3e6dbf;width: 8%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+        </div>
+    </div>
+    <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
+        <p class="tit">擅长...<span class="eng">Be talented in...</span></p>
+        <div class="body">
+            <p>瞎装各种系统<span class="eng">Installing many kinds of systems happily</span></p>
+            <p>把各种软件都换成预览版<span class="eng">Change all kinds apps to preview/beta version</span></p>
+            <p>剪视频<span class="eng">Editing videos</span></p>
+            <s>唱🎤、跳💃、Rap😲、篮球🏀<span class="eng">Singing🎤, dancing💃, rapping😲 and palying basketball🏀</span></s>
+            <p>做作业<span class="eng">Doing <s>housework</s> homework</span></p>
+        </div>
+    </div>
+    <div class="box card fx h func stop-center" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
+        <p class="tit">我的项目<span class="eng">My projects...</span></p>
+        <div class="body">
+            <p>往下滑...<span class="eng">Scroll down...</span></p>
+        </div>
+    </div>
+    <div class="box text center" style="margin-top: var(--ph);">
+        <h1 class="trans b-s" style="font-size: 90px;"><span class="shine" style="--color:#2983cc;--colorshine:#76cfff;--speed:2;">Windows 12 网页版</span><span class="eng">Windows 12 Online</span></h1>
+    </div>
+    <div class="box card pjc" style="width: 50%;margin-left: 25%;margin-top: var(--ph);" id="win12">
+        <p class="tit">Windows 12 网页版<span class="eng">Windows 12 Online</span></p>
+        <div class="body">
+            <p>使用html,css和js制作，在网上通过网页的形式对 windows12 进行预测<span class="eng">Made by html, css and js, predict windows12 and show it by webpage</span></p>
+            <p>丝滑的动画和精美的UI设计是项目的特色<span class="eng">Silky animation and beautiful UI design are the feature of this project</span></p>
+            <div style="display: flex;" class="tool">
+                <a href="http://tjy-gitnub.github.io/win12/desktop.html">
+                    <p>前往体验</p>
+                    <span class="eng">Go to try</span>
+                </a>
+                <a href="http://github.com/tjy-gitnub/win12">
+                    <p>项目地址</p>
+                    <span class="eng">link of the code</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="box text center" style="margin-top: var(--ph);">
+        <h1 class="trans b-s" style="font-size: 90px;"><span class="shine" style="--color:#2983cc;--colorshine:#76cfff;--speed:2;">尼科夫在线工具</span><span class="eng">Nikov Online Tool</span></h1>
+    </div>
+    <div class="box card pjc" style="width: 50%;margin-left: 25%;margin-top: var(--ph);" id="nikov">
+        <p class="tit">尼科夫在线工具<span class="eng">Nikov Online Tool</span></p>
+        <div class="body">
+            <p>一个专用于坑人的网站，在注册过程中设置了重重关卡，无人能够成功<span class="eng">A website to cheat others. I set many hurdles in the registration process. Nobody can succeed</span></p>
+            <p>⚠ 注意：高血压患者慎用！<span class="eng">⚠ Notice: Hypertension patients should use it with caution!</span></p>
+            <div style="display: flex;" class="tool">
+                <a href="http://tjy-gitnub.github.io/nikov">
+                    <p>前往体验</p>
+                    <span class="eng">Go to try</span>
+                </a>
+                <a href="http://github.com/tjy-gitnub/nikov">
+                    <p>项目地址</p>
+                    <span class="eng">link of the code</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="box text center" style="margin-top: var(--ph);">
+        <h1 class="trans b-s" style="font-size: 90px;"><span class="shine" style="--color:#2983cc;--colorshine:#76cfff;--speed:2;">Tapple 滚动监测</span><span class="eng">Tapple Scrolling Monitoring</span></h1>
+    </div>
+    <div class="box card pjc defc" style="width: 50%;margin-left: 25%;margin-top: var(--ph);" id="tapple">
+        <p class="tit">Tapple 滚动监测<span class="eng">Tapple Scrolling Monitoring</span></p>
+        <div class="body">
+            <p>一个滚动监测样式库，灵感来源于苹果官网<span class="eng">A scrolling monitoring style gallery, the inspiration comes from official website of Apple</span></p>
+            <p>使用简单方便，仅需要设置class即可<span class="eng">The way to use it is very easy, just need to set class</span></p>
+            <div style="display: flex;" class="tool">
+                <a href="http://tjy-gitnub.github.io/tapple">
+                    <p>前往预览</p>
+                    <span class="eng">Go to view</span>
+                </a>
+                <a href="http://github.com/tjy-gitnub/tapple">
+                    <p>项目地址</p>
+                    <span class="eng">link of the code</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);" id="tapple">
+        <p class="tit">联系方式<span class="eng">Contact</span></p>
+        <div class="body">
+            <p>邮件: a2017225905@outlook.com<span class="eng">E-mail: a2017225905@outlook.com</span></p>
+            <p>电话: 没有<span class="eng">Telephone: None</span></p>
+            <p>哔哩哔哩: <a href="http://space.bilibili.com/2010692096" class="jump">BigSocket</a><span class="eng">Bilibili: <a href="http://space.bilibili.com/2010692096" class="jump">BigSocket</a></span></p>
+        </div>
+    </div>
+    <div class="box text center lock" style="margin-top: var(--ph);">
+        <h1 style="font-size: 90px;"><span  style="color: #000;">拜拜👋</span><span class="eng">Bye👋</span></h1>
+    </div>
+    <script src="/tapple/scroll.js"></script>
+    <script>
+        my_scroll=(t)=>{
+            const box_win12 = $('#win12')[0];
+            if(t<box_win12.offsetTop+box_win12.offsetHeight&&box_win12.offsetTop-ph<t){
+                $('body').addClass('win12');
+            }else{
+                $('body').removeClass('win12');
+            }
+            const box_nikov = $('#nikov')[0];
+            if(t<box_nikov.offsetTop+box_nikov.offsetHeight&&box_nikov.offsetTop-ph<t){
+                $('body').addClass('nikov');
+            }else{
+                $('body').removeClass('nikov');
+            }
+        }
+    </script>
+    <!-- <img src="https://bing.com/th?id=OHR.Trossachs_ZH-CN9299955040_UHD.jpg&qlt=100" alt=""> -->
+</body>
+
+</html>
