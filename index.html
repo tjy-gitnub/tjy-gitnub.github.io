@@ -10,24 +10,18 @@
     <link rel="stylesheet" href="style.css">
     <base target="_blank">
 </head>
-
-<body>
-    <div id="loadback"
-        style="background-color:#000;width:100%;height:100%;z-index:105;position:fixed;transition:3s;top:0;left:0;">
-        <p id="loadbacktext"
-            style="width:100%;position:absolute;left:0;font-size:50px;transition:2s;color:#fff;height:100px;top:calc(50% - 80px);text-align:center;opacity:0;margin:0;">
+<body><div id="loadback" style="background-color:#000;width:100%;height:100%;z-index:105;position:fixed;transition:3s;top:0;left:0;">
+        <p id="loadbacktext" style="width:100%;position:absolute;left:0;font-size:50px;transition:2s;color:#fff;height:100px;top:calc(50% - 80px);text-align:center;opacity:0;margin:0;">
             欢迎来到谭景元的主页</p>
-        <p id="loadbacktexteng"
-            style="width:100%;position:absolute;left:0;font-size:25px;transition:2s;color:#fff;height:50px;top:50%;text-align:center;opacity:0;margin:0;">
+        <p id="loadbacktexteng"style="width:100%;position:absolute;left:0;font-size:25px;transition:2s;color:#fff;height:50px;top:50%;text-align:center;opacity:0;margin:0;">
             Welcome to Tan Jingyuan's homepage</p>
-        <script>setTimeout(() => { document.getElementById('loadbacktext').style.opacity = 1; document.getElementById('loadbacktexteng').style.opacity = 1; }, 100);
-            setTimeout(() => { document.getElementById('loadbacktext').style.opacity = 0; document.getElementById('loadbacktexteng').style.opacity = 0; }, 2100);
-            setTimeout(() => {
-                document.getElementById('loadbacktext').innerText = '正在加载...'; document.getElementById('loadbacktexteng').innerText = 'Loading...';
-                document.getElementById('loadbacktext').style.opacity = 1; document.getElementById('loadbacktexteng').style.opacity = 1;
-            }, 4100);
-            let bcci = setInterval(() => { document.getElementById('loadback').style.backgroundColor = '#0c4574'; setTimeout(() => { document.getElementById('loadback').style.backgroundColor = '#000'; }, 3000); }, 6000);
-            document.body.onload = () => { document.getElementById('loadback').style.opacity = 0; setTimeout(() => { document.getElementById('loadback').style.display = 'none'; }, 3000); clearInterval(bcci) };</script>
+        <script>setTimeout(()=>{document.getElementById('loadbacktext').style.opacity=1;document.getElementById('loadbacktexteng').style.opacity = 1;},100);
+            setTimeout(()=>{document.getElementById('loadbacktext').style.opacity=0;document.getElementById('loadbacktexteng').style.opacity = 0;},2100);
+            setTimeout(()=>{document.getElementById('loadbacktext').innerText = '正在加载...';document.getElementById('loadbacktexteng').innerText='Loading...';
+            document.getElementById('loadbacktext').style.opacity = 1;document.getElementById('loadbacktexteng').style.opacity=1;
+            },4100);
+            let bcci = setInterval(()=>{ document.getElementById('loadback').style.backgroundColor='#0c4574';setTimeout(()=>{ document.getElementById('loadback').style.backgroundColor='#000';},3000);},6000);
+            document.body.onload=()=>{ document.getElementById('loadback').style.opacity=0;setTimeout(()=>{document.getElementById('loadback').style.display='none';},3000); clearInterval(bcci)};</script>
     </div>
     <script src="/tapple/jq.min.js"></script>
     <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
