@@ -1,8 +1,9 @@
 body {
     padding: 0 0 500px;
-    background-color: #fff;
+    background: url(lowerspeed.jpg) center;
     background-attachment: fixed;
     background-size: cover;
+    background-color: #222;
 }
 
 body.win12{
@@ -69,7 +70,7 @@ a.jump:active{
 
 #title>.xing{
     width: 210px;
-    fill: #1861af;
+    fill: #6c91ee;
     position: absolute;
     top: 0;
     transition: 100ms;
@@ -79,7 +80,7 @@ a.jump:active{
 
 #title>.yuan{
     width: 150px;
-    fill: #207dab;
+    fill: #79bbdc;
     position: absolute;
     top: 10px;
     left: 140px;
@@ -93,6 +94,7 @@ a.jump:active{
     position: absolute;
     opacity: 0;
     transition: 200ms;
+    color: #f7f7f7;
 }
 
 #title>.text.chinese{
@@ -138,7 +140,8 @@ a.jump:active{
     font-size: 8px;
     display: inline-block;
     text-align: center;
-    margin: 1px;
+    margin: 1px 2px;
+    line-height: 1.2;
 }
 
 .detail:hover::before{
@@ -149,17 +152,20 @@ a.jump:active{
     z-index: 99;
     width: 400px;
     height: max-content;
-    background: #fff;
-    color: #000;
+    background: #222;
+    color: #efefef;
     padding: 5px 10px;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px #00000050;
+    box-shadow: 1px 1px 10px #00000070;
+    border: 1px solid #7f7f7f40;
 }
 
 .card{
     border-radius: 20px !important;
-    background-color: #7f7f7f0c !important;
-    box-shadow: 0 1px 2px #44444450, 0px 3px 35px 1px #00000050;
+    color: #e2e2e2;
+    background-color: #222222d0 !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 3px #00000070, 0px 3px 35px 1px #000000;
 }
 
 .card p {
@@ -200,6 +206,16 @@ a.jump:active{
     height: 14px;
 }
 
+.pjc#nikov{
+    color: #000;
+    box-shadow: 0 1px 2px #44444450, 0px 3px 35px 1px #00000050;
+}
+
+.pjc#win12>.body>.tool>a,.pjc#tapple>.body>.tool>a{
+    background-color: #ffffff10;
+    color: #fff;
+}
+
 .pjc>.body>.tool>a{
     background-color: #ffffff30;
     border-radius: 10px;
@@ -236,4 +252,9 @@ a.jump:active{
 .pjc>.body>.tool>a>.eng:hover{
     /* border: 2px solid transparent; */
     background: none;
+}
+
+.box.text{
+    color: #fff;
+    /* text-shadow: 1px 2px 5px #ffffff30; */
 }

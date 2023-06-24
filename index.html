@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>谭景元的主页</title>
+    <title>星源</title>
     <link rel="stylesheet" href="/tapple/main.css">
     <link rel="stylesheet" href="style.css">
     <base target="_blank">
 </head>
-<body><div id="loadback" style="background-color:#fff;width:100%;height:100%;z-index:105;position:fixed;transition:5s;top:0;left:0;">
+<body><div id="loadback" style="background-color:#000;width:100%;height:100%;z-index:105;position:fixed;transition:5s;top:0;left:0;color: #d2d2d2;">
     <p id="loadbacktext" style="width:100%;position:absolute;left:0;font-size:50px;transition:1s;height:100px;top:calc(50% - 80px);text-align:center;opacity:0;margin:0;">
         嗨,别来无恙啊!</p>
     <p id="loadbacktexteng" style="width:100%;position:absolute;left:0;font-size:25px;transition:1s;height:50px;top:50%;text-align:center;opacity:0;margin:0;">
@@ -33,12 +33,12 @@
         let bcci = setInterval(() => {
             document.getElementById('loadbacktext').style.opacity=0;document.getElementById('loadbacktexteng').style.opacity =0;
             setTimeout(() => {c++; document.getElementById('loadbacktext').innerText = zh_ms[c % 8];
-                document.getElementById('loadbacktexteng').innerText = en_ms[c % 8];
+                document.getElementById('loadbacktexteng').innerText = en_ms[c % 7];
                 document.getElementById('loadbacktext').style.opacity=1;document.getElementById('loadbacktexteng').style.opacity = 1;
-            }, 1000);document.getElementById('loadback').style.backgroundColor = '#9ad1ff';
-            setTimeout(()=>{document.getElementById('loadback').style.backgroundColor = '#fff';}, 5000);
+            }, 1000);document.getElementById('loadback').style.backgroundColor = '#003561';
+            setTimeout(()=>{document.getElementById('loadback').style.backgroundColor = '#000';}, 5000);
         }, 10000);
-        document.body.onload=()=>{ document.getElementById('loadback').style.opacity=0;setTimeout(()=>{document.getElementById('loadback').style.display='none';},3000); clearInterval(bcci)};</script>
+        // document.body.onload=()=>{ document.getElementById('loadback').style.opacity=0;setTimeout(()=>{document.getElementById('loadback').style.display='none';},3000); clearInterval(bcci)};</script>
     </div>
     <div id="title">
         <svg class="xing" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><g transform="scale(0.303,0.303)"><g transform="translate(0,0)"><g transform="translate(0,0)"><g transform="translate(0,0) scale(1,1)">
@@ -88,14 +88,15 @@
             <p>更多记不清了<span class="eng">I forget others</span></p>
         </div>
     </div>
-    <div class="box card jt" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
+    
+<div class="box card jt" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);backdrop-filter: none;background-color: #282828 !important;">
         <p class="tit"><span class="shine" style="--color:#2374b7;--colorshine:#76cfff;--speed:4;">精通各种语言</span><span class="eng">Be proficient in many languages</span></p>
         <div class="body">
             <div><p style="margin: 0;">Scratch</p>
                 <div><div><div style="background: #ffab19;width: 99%;height: 100%;border-radius: 10px;"
                     class="highlight width"></div></div></div></div>
             <div><p style="margin: 0;">Markdown</p>
-                <div><div><div style="background: #000;width: 85%;height: 100%;border-radius: 10px;"
+                <div><div><div style="background: #bebebe;width: 85%;height: 100%;border-radius: 10px;"
                     class="highlight width"></div></div></div></div>
             <div><p style="margin: 0;">CSS</p>
                 <div><div><div style="background: #4061e8;width: 78%;height: 100%;border-radius: 10px;"
@@ -113,7 +114,7 @@
                 <div><div><div style="background: #6c94c9;width: 42%;height: 100%;border-radius: 10px;"
                     class="highlight width"></div></div></div></div>
             <div><p style="margin: 0;">Cmd</p>
-                <div><div><div style="background: #444;width: 40%;height: 100%;border-radius: 10px;"
+                <div><div><div style="background: #aaaaaa;width: 40%;height: 100%;border-radius: 10px;"
                     class="highlight width"></div></div></div></div>
             <div><p style="margin: 0;">C#</p>
                 <div><div><div style="background: #64047f;width: 30%;height: 100%;border-radius: 10px;"
@@ -143,9 +144,9 @@
         </div>
     </div>
     <div class="box text center" style="margin-top: var(--ph);">
-        <h1 class="trans b-s" style="font-size: 90px;"><span class="shine" style="--color:#2983cc;--colorshine:#76cfff;--speed:2;">Windows 12 网页版</span><span class="eng">Windows 12 Online</span></h1>
+        <h1 class="trans b-s" style="font-size: 90px;"><span class="shine" style="--color:#7422ae;--colorshine:#487fff;--speed:2;">Windows 12 网页版</span><span class="eng">Windows 12 Online</span></h1>
     </div>
-    <div class="box card pjc" style="width: 50%;margin-left: 25%;margin-top: var(--ph);" id="win12">
+    <div class="box card pjc defc" style="width: 50%;margin-left: 25%;margin-top: var(--ph);" id="win12">
         <p class="tit">Windows 12 网页版<span class="eng">Windows 12 Online</span></p>
         <div class="body">
             <p>使用html,css和js制作，在网上通过网页的形式对 windows12 进行创新<span class="eng">Made by html, css and js, create windows12 and show it by webpage</span></p>
@@ -220,7 +221,7 @@
         </div>
     </div>
     <div class="box text center lock" style="margin-top: var(--ph);">
-        <h1 style="font-size: 90px;"><span  style="color: #000;">没别的了</span><span class="eng">That's all</span></h1>
+        <h1 style="font-size: 90px;"><span  style="color: #fff;">没别的了</span><span class="eng">That's all</span></h1>
     </div>
     <!-- 预加载 -->
     <img src="win12.svg" style="width: 0;height: 0;opacity: 0;border: 0;margin: 0;">
