@@ -32,7 +32,7 @@
         let c=-1;
         let bcci = setInterval(() => {
             document.getElementById('loadbacktext').style.opacity=0;document.getElementById('loadbacktexteng').style.opacity =0;
-            setTimeout(() => {c++; document.getElementById('loadbacktext').innerText = zh_ms[c % 8];
+            setTimeout(() => {c++; document.getElementById('loadbacktext').innerText = zh_ms[c % 7];
                 document.getElementById('loadbacktexteng').innerText = en_ms[c % 7];
                 document.getElementById('loadbacktext').style.opacity=1;document.getElementById('loadbacktexteng').style.opacity = 1;
             }, 1000);document.getElementById('loadback').style.backgroundColor = '#003561';
