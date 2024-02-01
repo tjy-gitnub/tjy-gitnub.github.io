@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>星源</title>
+    <title>星源 - Starry Source</title>
     <link rel="stylesheet" href="/tapple/main.css">
     <link rel="stylesheet" href="style.css">
     <base target="_blank">
@@ -14,21 +14,28 @@
     <p id="loadbacktext" style="width:100%;position:absolute;left:0;font-size:50px;transition:1s;height:100px;top:calc(50% - 80px);text-align:center;opacity:0;margin:0;">
         嗨,别来无恙啊!</p>
     <p id="loadbacktexteng" style="width:100%;position:absolute;left:0;font-size:25px;transition:1s;height:50px;top:50%;text-align:center;opacity:0;margin:0;">
-        Hi,terribly nice to meet you!</p>
+        Hi, nice to meet you!</p>
     <script>setTimeout(()=>{document.getElementById('loadbacktext').style.opacity=1;document.getElementById('loadbacktexteng').style.opacity = 1;},100);
         setTimeout(()=>{document.getElementById('loadbacktext').style.opacity=0;document.getElementById('loadbacktexteng').style.opacity = 0;},2100);
         setTimeout(()=>{document.getElementById('loadbacktext').innerText = '与君初相识，犹如故人归。欢迎来到星源的网站';
-        document.getElementById('loadbacktexteng').innerText='Meeting you first time is like seeing an old friend.Welcome to Starry Source\'s website.'
+        document.getElementById('loadbacktexteng').innerText='Meeting you first time is like seeing an old friend. Welcome to Starry Source\'s website.'
         document.getElementById('loadbacktext').style.opacity = 1;document.getElementById('loadbacktexteng').style.opacity=1;},4100);
-        let zh_ms=['海内存知己,天涯若比邻,正在加载请稍等...','有朋自远方来,不亦乐乎,欢迎!','君问归期未有期,巴山夜雨涨秋池,请耐心等待',
-        '无可奈何花落去,似曾相识燕归来,页面马上加载出来',
-        // '十年生死两茫茫,等待总是有结果的,请耐心',
-        '盈缩之期,不但在天;养怡之福,可得永年。正在努力加载','遗民泪尽胡尘里,南望王师又一年,你的网络太慢了',
-        '让我们再来一次吧'];let en_ms=['Wherever you are,friendship never chenge.Page is loading...','Meeting friends is very happy.Welcome!',
-        'Your returning date hasn\'t decided,rain rises the pond.Please wait','Flowers fall helplessly,the swallow return again,Page coming soon',
-        // 'Ten yaers,the distance between life and death.Please wait patiently',
-        'The length of life is not just decided by god.Loading hard...',
-        'Loyalists crying in Hun\'s territory,year after year.The network is too slow.','Let\'s do it again'];
+        let zh_ms=['海内存知己，天涯若比邻。正在加载，请稍等...',
+                   '有朋自远方来，不亦乐乎？欢迎!',
+                   '君问归期未有期，巴山夜雨涨秋池。请耐心等待',
+                   '无可奈何花落去，似曾相识燕归来。页面马上加载出来',
+                   // '十年生死两茫茫,等待总是有结果的,请耐心',
+                   '盈缩之期，不但在天；养怡之福，可得永年。正在努力加载',
+                   '遗民泪尽胡尘里，南望王师又一年。你的网络太慢了',
+                   '让我们再来一次吧'];
+        let en_ms=['Wherever you are, friendship never chenge. Page is loading...',
+                   'Is it not delightful to have friends coming from distant quarters? Welcome!',
+                   'Your returning date hasn\'t decided, Mt.Ba rain rises the pond. Please wait.',
+                   'Flowers fall helplessly, the swallow return again. Page is coming...',
+                   // 'Ten yaers, the distance between life and death. Please wait patiently',
+                   'The length of life is not just decided by god. Still loading...',
+                   'Loyalists crying in Hun\'s territory, year after year. Your network is too slow.',
+                   'Let\'s do it again'];
         let c=-1;
         let bcci = setInterval(() => {
             document.getElementById('loadbacktext').style.opacity=0;document.getElementById('loadbacktexteng').style.opacity =0;
@@ -58,8 +65,8 @@
     <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: calc(var(--ph) * 2);">
         <p class="tit">你好!👋<span class="eng">Hello!👋</span></p>
         <div class="body">
-            <p>很高兴认识你！😀<span class="eng">Glad to meet you!😀</span></p>
-            <p>没错，我就是星源<span class="eng">Yes, I'm Starry Source</span></p>
+            <p>很高兴认识你！😀<span class="eng">Nice to meet you!😀</span></p>
+            <p>没错，我就是星源<span class="eng">I'm Starry Source</span></p>
         </div>
     </div>
     <div class="box card" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);position: relative;">
@@ -83,9 +90,9 @@
             <p>2015年就读于成都市实验小学<span class="eng">Studied in Chengdu Experimental Primary School in 2015.</span></p>
             <p>2021年就读于成都市七中育才汇源校区<span class="eng">Studied in Chengdu No.7 Yucai Middle School Huiyuan Campus in
                     2021.</span></p>
-            <p>曾获得 CSP普及组一等奖<span class="eng">Got first prize in CSP-J</span></p>
-            <p>曾获得 蓝桥杯国赛三等奖<span class="eng">Got third prize in Lanqiao national competition</span></p>
-            <p>更多记不清了<span class="eng">I forget others</span></p>
+            <p>曾获得 CSP普及组一等奖<span class="eng">Got No.1 in CSP-J</span></p> <!-- %%%%%% -->
+            <p>曾获得 蓝桥杯国赛三等奖<span class="eng">Got No.3 in Lanqiao national competition</span></p>
+            <p>更多记不清了<span class="eng">I forget others...</span></p>
         </div>
     </div>
     
@@ -130,11 +137,11 @@
     <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
         <p class="tit">擅长...<span class="eng">Be talented in...</span></p>
         <div class="body">
-            <p>瞎装各种系统<span class="eng">Installing many kinds of systems happily</span></p>
-            <p>把各种软件都换成预览版<span class="eng">Changing all kinds apps to preview/beta version</span></p>
+            <p>瞎装各种系统<span class="eng">Installing many kinds of systems happily.</span></p>
+            <p>把各种软件都换成预览版<span class="eng">Changing all kinds apps to preview/beta version.</span></p>
             <p>剪视频<span class="eng">Editing videos</span></p>
-            <s>唱🎤、跳💃、Rap😲、篮球🏀<span class="eng">Singing🎤, dancing💃, rapping😲 and palying basketball🏀</span></s>
-            <p>做作业<span class="eng">Doing <s>housework</s> homework</span></p>
+            <s>唱🎤、跳💃、Rap😲、篮球🏀<span class="eng">Singing🎤, dancing💃, rapping😲 and palying basketball🏀</span></s> <!-- bruh -->
+            <p>做作业<span class="eng">Doing <s>housework</s> homework.</span></p>
         </div>
     </div>
     <div class="box card fx h stop-center" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
@@ -149,7 +156,7 @@
     <div class="box card pjc defc" style="width: 50%;margin-left: 25%;margin-top: var(--ph);" id="win12">
         <p class="tit">Windows 12 网页版<span class="eng">Windows 12 Online</span></p>
         <div class="body">
-            <p>使用html,css和js制作，在网上通过网页的形式对 windows12 进行创新<span class="eng">Made by html, css and js, create windows12 and show it by webpage</span></p>
+            <p>使用html,css和js制作，在网上通过网页的形式对 Windows 12 进行创新<span class="eng">Made by html, css and js, create Windows 12 and show it by webpage</span></p>
             <p>丝滑的动画和精美的UI设计是项目的特色<span class="eng">Silky animation and beautiful UI design are the feature of this project</span></p>
             <div style="display: flex;" class="tool">
                 <a href="http://tjy-gitnub.github.io/win12/desktop.html">
@@ -158,7 +165,7 @@
                 </a>
                 <a href="http://github.com/tjy-gitnub/win12">
                     <p>项目地址</p>
-                    <span class="eng">link of the code</span>
+                    <span class="eng">View it on Github</span>
                 </a>
             </div>
         </div>
@@ -178,7 +185,7 @@
                 </a>
                 <a href="http://github.com/tjy-gitnub/nikov">
                     <p>项目地址</p>
-                    <span class="eng">link of the code</span>
+                    <span class="eng">View it on Github</span>
                 </a>
             </div>
         </div>
@@ -194,11 +201,11 @@
             <div style="display: flex;" class="tool">
                 <a href="http://tjy-gitnub.github.io/tapple">
                     <p>前往预览</p>
-                    <span class="eng">Go to view</span>
+                    <span class="eng">Go to try</span>
                 </a>
                 <a href="http://github.com/tjy-gitnub/tapple">
                     <p>项目地址</p>
-                    <span class="eng">link of the code</span>
+                    <span class="eng">View it on Github</span>
                 </a>
             </div>
         </div>
@@ -221,7 +228,7 @@
         </div>
     </div>
     <div class="box text center lock" style="margin-top: var(--ph);">
-        <h1 style="font-size: 90px;"><span  style="color: #fff;">没别的了</span><span class="eng">That's all</span></h1>
+        <h1 style="font-size: 90px;"><span  style="color: #fff;">没别的了</span><span class="eng">That's all.</span></h1>
     </div>
     <!-- 预加载 -->
     <img src="win12.svg" style="width: 0;height: 0;opacity: 0;border: 0;margin: 0;">
