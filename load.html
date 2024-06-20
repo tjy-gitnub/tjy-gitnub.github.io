@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星源</title>
+    <link rel="stylesheet" href="/tapple/main.css">
+    <link rel="stylesheet" href="style.css">
+    <base target="_blank">
+</head>
+<body style="background-color: #fff;">
+    <style>
+        #loadback{
+            background-color:#000;
+            width:100%;
+            height:100%;
+            z-index:105;
+            position:fixed;
+            top:0;
+            left:0;
+            color:#fff;
+        }
+        #loadback>.bg{
+            position:absolute;top:0;left:0;width:100%;height:100%;
+            background-color: #000;
+            overflow: hidden;
+            transition: 1s, filter 1000ms cubic-bezier(0, 0.88, 0.33, 2.01);
+        }
+        #loadback>.bg>.cc{
+            --s:20px;
+            --c:#2983cc33;
+            width: var(--s);
+            height:var(--s);
+            display: block;
+            position: absolute;
+            background-image: radial-gradient(circle at 50% 50%,var(--c) 10%,transparent calc(var(--s) / 2));
+            transform:translate(-50%,-50%);
+            transition: 1700ms cubic-bezier(0, 0.88, 0.33, 2.01);
+        }
+        #loadback>.bg:not(.d)>.cc{
+            animation: c 10s infinite;
+        }
+        @keyframes c {
+            20%{
+                transform: translate(-30%,-65%);
+                opacity: 0.6;
+            }
+            40%{
+                transform: translate(-60%,-65%);
+                opacity: 0.5;
+            }
+            60%{
+                transform: translate(-35%,-25%);
+            }
+            80%{
+                transform: translate(-65%,-40%);
+                opacity: 0.7;
+            }
+        }
+        #loadback>.bg.d{
+            filter: saturate(0.5);
+            opacity: 0;
+        }
+        #loadback.l>.bg{
+            background-color: #fffcf7;
+        }
+        #loadback.l>.tx{
+            color: #000;
+        }
+        #loadback>.bg.d>.cc{
+            left: 50vw !important;
+            top: 50vh !important;
+        }
+        #loadback>.tx{
+            position:absolute;
+            top:50%;
+            left:0;
+            width:100%;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 50px;
+            text-align: center;
+            transition: 700ms;
+            font-family: 'Courier New', Courier, monospace;
+            white-space-collapse: preserve;
+            word-break: keep-all;
+            line-height: 70px;
+            letter-spacing: 5px;
+        }
+    </style>
+    <div id="loadback">
+        <div class="bg d">
+            <span class="cc yl" style="left: 15vw;top: 35vh;--c:#fff35033;--s:220px;transition-delay: 350ms;animation-delay: 3.2s;"></span>
+            <span class="cc yr" style="left: 80vw;top: 75vh;--c:#fff35043;--s:100px;transition-delay: 400ms;animation-delay: 2.4s;"></span>
+            <span class="cc ys" style="left: 30vw;top: 20vh;--c:#fff34483;--s:150px;transition-delay: 0;animation-delay: 5.1s;"></span>
+            <span class="cc yb" style="left: 50vw;top: 75vh;--c:#fff34453;--s:300px;transition-delay: 200ms;animation-delay: 4.3s;"></span>
+            <span class="cc b" style="left: 20vw;top: 70vh;--c:#3ea2f450;--s:200px;transition-delay: 100ms;animation-delay: 2s;"></span>
+            <span class="cc p" style="left: 75vw;top: 30vh;--c:#fe51ff40;--s:400px;transition-delay: 300ms;animation-delay: 3.7s;"></span>
+            <!-- <span class="cc"></span> -->
+        </div>
+        <div class="tx" id="loadbacktext">
+            
+        </div>
+        <script>
+            let d=['千星源起','婵娟银河','皎皎耀天黛','','万山越尽','扶摇东风','浩浩舞乾坤'];
+            let t=[1500,4500,7500,11500,13000,17000,21000];
+            let p=[
+                '纤云弄巧，银汉迢迢暗度。','金风玉露一相逢，便胜却人间无数。',
+                '天街夜色凉如水，卧看牵牛织女星。',
+                '日月之行，若出其中。星汉灿烂，若出其里。',
+                '天接云涛连晓雾，星河欲转千帆舞。',
+                '九万里风鹏正举，风休住，蓬舟吹取三山去！',
+                'Loading...'
+            ];
+            setTimeout(() => {
+                document.querySelector('#loadback>.bg').className='bg';
+            }, 500);
+            let c=-1;
+            for (let i = 0; i < 7; i++) {
+                setTimeout(() => {
+                    document.getElementById('loadbacktext').style.opacity=0;
+                    setTimeout(() => {document.getElementById('loadbacktext').innerText = d[i];
+                        document.getElementById('loadbacktext').style.opacity=1;
+                    }, 800);
+                }, t[i]);
+            }
+            setTimeout(() => {
+                document.getElementById('loadback').className='l';
+                for (let i = 0; i < 7; i++) {
+                    setTimeout(() => {
+                        document.getElementById('loadbacktext').style.opacity=0;
+                        setTimeout(() => {document.getElementById('loadbacktext').innerText = p[i];
+                            document.getElementById('loadbacktext').style.opacity=1;
+                        }, 800);
+                    }, i*6000);
+                }
+            }, 26000);
+        </script>
+    </div>
+    <script src="/tapple/jq.min.js"></script>
+    <script src="/tapple/scroll.js"></script>
+</body>
+
+</html>

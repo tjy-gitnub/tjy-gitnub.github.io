@@ -144,20 +144,25 @@ a.jump:active{
     line-height: 1.2;
 }
 
-.detail:hover::before{
+.detail::before{
     content: var(--cnt);
-    display: block;
+    display: none;
     position: absolute;
     transform: translateX(20px);
     z-index: 99;
-    width: 400px;
+    width: max-content;
+    max-width: 400px;
     height: max-content;
     background: #222;
     color: #efefef;
-    padding: 5px 10px;
+    padding: 9px 11px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px #00000070;
     border: 1px solid #7f7f7f40;
+}
+
+.detail:hover::before{
+    display: block;
 }
 
 .card{

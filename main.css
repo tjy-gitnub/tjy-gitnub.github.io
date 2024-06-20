@@ -1,0 +1,269 @@
+body {
+    /* padding: 0 0 500px; */
+    padding: 0;
+    margin: 0;
+    background: url(bg.jpg) center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #222;
+    scroll-behavior: smooth;
+}
+
+.a {
+    text-decoration: none !important;
+    cursor: pointer;
+    user-select: none;
+}
+
+a.jump {
+    color: #2983cc;
+}
+
+a.jump:hover {
+    color: #999;
+}
+
+a.jump:active {
+    color: #666;
+}
+
+p {
+    margin: unset;
+}
+
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: #7f7f7f30;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7f7f7f70;
+    background-clip: padding-box;
+    border: 6px solid transparent;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border: 4px solid transparent;
+}
+
+hr {
+    width: calc(100% - 20px);
+    background-color: #ffffff30;
+    border: none;
+    height: 1px;
+    border-radius: 10px;
+}
+
+/* #hd>svg>g>path{
+    stroke:#fff;
+    stroke-width: 10;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    fill:none;
+    stroke-miterlimit:10;
+}
+
+#hd{
+    width: 140px;
+    position: fixed;
+    height: 300px;
+    left: calc(50% - 70px);
+    top: calc(50% - 150px);
+} */
+
+#hd {
+    width: 200px;
+    position: fixed;
+    height: 300px;
+    left: calc(50% - 100px);
+    top: calc(50% - 150px);
+    overflow: hidden;
+    display: flex;
+    transition: 200ms;
+}
+
+#hd>svg {
+    margin: -20px 0 -10px;
+}
+
+.card {
+    background-color: #22222270;
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    box-shadow: #00000070 0 5px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card>.tit{
+    font-size: 40px;
+    line-height: 1.1;
+    font-weight: 500;
+    margin: 20px 30px;
+    text-align: start;
+}
+
+.card>.tit.center{
+    text-align: center;
+}
+
+.card>.body{
+    /* padding: 20px 30px; */
+    width: 100%;
+    flex-grow: 1;
+}
+
+
+.shine {
+    --speed:1;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(110deg, var(--color) 0 40%, var(--colorshine) 50% 50% ,var(--color) 60%);
+    background-size: 200% 100%;
+    background-position: calc(var(--scroll) * var(--speed)) 50%;
+}
+
+
+.lay {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    display: flex;
+    margin-top: 50vh;
+    flex-direction: column;
+}
+
+#inf {
+    margin: 100vh 200px 0 0;
+}
+
+#inf>.card {
+    height: calc(100% - 160px);
+    width: calc(100% - 200px);
+    max-width: 700px;
+    overflow: auto;
+    max-height: 800px;
+}
+
+
+#inf>.card>.chart {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    margin: 0 0 0 50px;
+    width: calc(100% - 50px);
+}
+
+#inf>.card>.chart>div {
+    display: flex;
+    margin-top: 10px;
+}
+
+#inf>.card>.chart>div>p:first-child {
+    min-width: 100px;
+}
+
+#jt{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+    overflow: hidden;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* #jt>div>p{
+    align-items: center;
+} */
+
+#jt>div{
+    display: flex;
+    padding: 2px 20px;
+    min-width: 600px;
+}
+
+#jt>div>p{
+    width: 100px;
+}
+
+#jt>div>div{
+    background: #7f7f7f50;
+    border-radius: 20px;
+    height: 8px;
+    margin-top: 9px;
+    transition: 200ms;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+
+#jt>div>div:hover{
+    margin-top: 6px;
+    height: 14px;
+}
+
+
+.highlight.width:not(.show) {
+    width: 0 !important;
+}
+
+.highlight.width {
+    transition: 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#hab{
+    width: calc(100% - 200px);
+    min-width: 400px;
+    max-width: 800px;
+    background-color: #33333330;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    /* column-count: auto; */
+    /* column-width: 100px; */
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px) brightness(1.2);
+}
+
+#hab>.cd{
+    /* margin: 5px; */
+    background-color: #00000050;
+    width: 100%;
+    min-height: 80px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+#hab>.cd:hover>svg{
+    transform: scale(40%);
+}
+
+#hab>.cd>svg{
+    height: 100%;
+    width: max-content;
+    transform: scale(35%);
+    transition: 200ms;
+}
+
+#hab>.cd>span{
+    flex-grow: 1;
+    font-size: 21px;
+}
+
+
+
+
+#ft{
+    background-color: #222;
+    
+}

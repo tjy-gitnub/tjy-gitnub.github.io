@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星源</title>
+    <link rel="stylesheet" href="/tapple/main.css">
+    <link rel="stylesheet" href="style.css">
+    <base target="_blank">
+</head>
+<body><div id="loadback" style="background-color:#000;width:100%;height:100%;z-index:105;position:fixed;transition:5s;top:0;left:0;color: #d2d2d2;">
+    <p id="loadbacktext" style="width:100%;position:absolute;left:0;font-size:50px;transition:1s;height:100px;top:calc(50% - 80px);text-align:center;opacity:0;margin:0;">
+        嗨,别来无恙啊!</p>
+    <p id="loadbacktexteng" style="width:100%;position:absolute;left:0;font-size:25px;transition:1s;height:50px;top:50%;text-align:center;opacity:0;margin:0;">
+        Hi,terribly nice to meet you!</p>
+    <script>setTimeout(()=>{document.getElementById('loadbacktext').style.opacity=1;document.getElementById('loadbacktexteng').style.opacity = 1;},100);
+        setTimeout(()=>{document.getElementById('loadbacktext').style.opacity=0;document.getElementById('loadbacktexteng').style.opacity = 0;},2100);
+        setTimeout(()=>{document.getElementById('loadbacktext').innerText = '与君初相识，犹如故人归。欢迎来到星源的网站';
+        document.getElementById('loadbacktexteng').innerText='Meeting you first time is like seeing an old friend.Welcome to Starry Source\'s website.'
+        document.getElementById('loadbacktext').style.opacity = 1;document.getElementById('loadbacktexteng').style.opacity=1;},4100);
+        let zh_ms=['海内存知己,天涯若比邻,正在加载请稍等...','有朋自远方来,不亦乐乎,欢迎!','君问归期未有期,巴山夜雨涨秋池,请耐心等待',
+        '无可奈何花落去,似曾相识燕归来,页面马上加载出来',
+        // '十年生死两茫茫,等待总是有结果的,请耐心',
+        '盈缩之期,不但在天;养怡之福,可得永年。正在努力加载','遗民泪尽胡尘里,南望王师又一年,你的网络太慢了',
+        '让我们再来一次吧'];let en_ms=['Wherever you are,friendship never chenge.Page is loading...','Meeting friends is very happy.Welcome!',
+        'Your returning date hasn\'t decided,rain rises the pond.Please wait','Flowers fall helplessly,the swallow return again,Page coming soon',
+        // 'Ten yaers,the distance between life and death.Please wait patiently',
+        'The length of life is not just decided by god.Loading hard...',
+        'Loyalists crying in Hun\'s territory,year after year.The network is too slow.','Let\'s do it again'];
+        let c=-1;
+        let bcci = setInterval(() => {
+            document.getElementById('loadbacktext').style.opacity=0;document.getElementById('loadbacktexteng').style.opacity =0;
+            setTimeout(() => {c++; document.getElementById('loadbacktext').innerText = zh_ms[c % 7];
+                document.getElementById('loadbacktexteng').innerText = en_ms[c % 7];
+                document.getElementById('loadbacktext').style.opacity=1;document.getElementById('loadbacktexteng').style.opacity = 1;
+            }, 1000);document.getElementById('loadback').style.backgroundColor = '#003561';
+            setTimeout(()=>{document.getElementById('loadback').style.backgroundColor = '#000';}, 5000);
+        }, 10000);
+        document.body.onload=()=>{ document.getElementById('loadback').style.opacity=0;setTimeout(()=>{document.getElementById('loadback').style.display='none';},3000); clearInterval(bcci)};</script>
+    </div>
+    <div id="title">
+        <svg class="xing" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><g transform="scale(0.303,0.303)"><g transform="translate(0,0)"><g transform="translate(0,0)"><g transform="translate(0,0) scale(1,1)">
+            <path d=" M 227.01 101.00 C 241.50 92.40 256.46 83.91 273.08 80.17 C 285.83 79.43 299.04 79.23 311.18 83.75 C 318.92 87.97 324.71 95.00 330.76 101.26 C 334.18 104.49 333.91 109.58 335.17 113.82 C 337.93 122.86 335.54 132.26 334.92 141.43 C 334.47 149.51 332.32 157.37 330.11 165.12 C 325.69 178.08 316.32 188.44 307.92 198.95 C 300.09 208.67 286.60 207.70 275.58 209.82 C 267.63 210.93 261.55 216.69 256.25 222.24 C 246.75 232.73 237.12 243.11 227.30 253.30 C 216.94 264.29 208.41 276.84 200.44 289.62 C 212.44 294.06 225.48 292.87 237.97 291.82 C 251.43 290.55 264.42 286.13 278.03 286.01 C 282.05 285.37 287.39 285.71 289.65 281.68 C 293.09 270.19 290.68 258.01 292.49 246.33 C 296.76 236.23 309.76 230.62 320.03 234.85 C 332.72 239.06 345.99 243.05 356.78 251.23 C 359.35 256.40 357.00 262.57 353.81 266.87 C 346.21 278.99 332.40 284.65 320.64 291.65 C 314.02 303.05 309.87 315.75 305.50 328.16 C 311.24 332.77 318.47 334.17 324.98 337.07 C 327.75 341.31 327.83 347.02 328.42 351.95 C 324.63 359.89 320.16 367.65 314.28 374.27 C 310.59 379.45 305.28 383.74 302.93 389.78 C 304.57 391.59 306.82 392.90 309.34 392.82 C 318.95 394.21 328.30 390.72 337.89 391.08 C 347.63 397.50 351.93 409.05 354.64 419.87 C 329.30 433.43 299.68 434.13 273.07 444.08 C 263.19 446.17 253.10 447.42 243.04 448.27 C 247.04 444.88 251.45 441.51 252.88 436.20 C 249.64 435.38 246.41 434.59 243.17 433.82 C 245.70 431.74 248.45 429.90 250.77 427.59 C 251.08 423.45 247.55 420.37 245.80 416.97 C 246.60 414.08 248.25 410.98 247.01 407.99 C 243.33 398.98 236.66 390.40 237.34 380.22 C 241.34 370.43 248.81 362.46 255.41 354.37 C 259.36 348.60 267.62 347.25 270.36 340.57 C 271.89 340.83 273.43 341.08 274.97 341.31 C 280.38 332.50 282.48 322.37 283.94 312.28 C 280.06 311.79 275.93 310.40 272.23 312.19 C 267.13 314.40 262.52 317.73 256.96 318.81 C 249.27 320.69 242.21 324.44 234.58 326.51 C 226.28 328.66 218.06 331.33 209.62 332.85 C 200.28 331.76 191.15 328.06 183.87 322.10 C 173.24 309.64 176.00 290.15 186.47 278.46 C 192.67 272.53 200.02 268.02 206.56 262.50 C 213.95 256.15 218.58 247.31 225.79 240.81 C 232.28 235.15 236.85 227.70 241.62 220.64 C 243.91 217.68 243.25 213.80 243.57 210.30 C 238.98 210.31 234.80 208.43 230.49 207.19 C 224.39 206.55 218.22 208.11 212.14 206.75 C 203.62 205.07 194.11 205.92 186.94 200.07 C 179.68 196.57 176.67 189.05 173.53 182.24 C 170.81 176.61 171.11 170.10 170.87 164.02 C 170.71 141.65 171.77 118.57 181.22 97.90 C 188.67 104.37 196.73 110.51 201.74 119.22 C 210.87 114.17 218.88 107.46 227.01 101.00 M 264.30 104.70 C 256.22 105.17 251.10 111.63 246.06 117.07 C 234.93 127.92 227.32 141.61 220.43 155.38 C 215.64 166.41 218.18 180.62 227.64 188.38 C 234.41 194.34 243.98 194.19 252.37 195.64 C 258.05 186.84 260.10 176.61 262.89 166.71 C 263.97 162.43 269.86 162.15 273.07 164.03 C 278.43 167.10 282.70 171.70 287.51 175.52 C 300.34 161.90 308.94 141.98 303.71 123.26 C 303.20 114.90 295.08 110.44 289.26 105.80 C 281.26 103.22 272.57 103.92 264.30 104.70 Z"/>
+        </g></g></g></g></svg>
+        <svg class="yuan" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><g transform="scale(0.303,0.303)"><g transform="translate(0,0)"><g transform="translate(0,0)"><g transform="translate(0,0) scale(1,1)"><g transform="scale(2.9464285714285716,2.9464285714285716) translate(26.599999999999994,19.599999999999994)"><g transform="translate(0.000000,140.000000) scale(0.100000,-0.100000)" stroke="none">
+            <path d="M833 1393 c-7 -3 -13 -10 -13 -17 0 -15 -195 -101 -252 -111 -21 -4 -38 -10 -38 -14 0 -4 14 -22 31 -39 52 -53 132 -37 211 42 20 20 39 36 42 36 3 0 -5 -24 -17 -52 -13 -29 -25 -57 -27 -63 -3 -9 -14 -36 -65 -152 l-10 -22 -40 20 c-37 18 -41 19 -52 2 -7 -9 -13 -27 -13 -39 0 -12 -10 -53 -21 -90 -12 -38 -24 -82 -26 -99 -3 -16 -11 -48 -18 -70 -21 -62 -34 -125 -25 -125 29 0 84 36 102 66 11 19 22 33 24 32 2 -2 4 -58 5 -124 1 -119 2 -121 30 -152 35 -37 53 -33 77 17 11 23 25 37 40 39 20 3 22 -1 22 -40 0 -42 -2 -45 -52 -75 -81 -48 -101 -51 -127 -14 -28 38 -48 39 -62 4 -6 -15 -14 -30 -20 -33 -16 -10 -13 -114 5 -147 14 -28 20 -31 48 -27 24 3 40 -1 58 -17 20 -17 21 -20 6 -15 -19 6 -19 6 -4 -11 9 -10 16 -20 15 -23 0 -3 4 -14 11 -25 6 -11 12 -16 12 -12 0 5 5 5 11 1 8 -4 7 -9 -2 -15 -8 -5 3 -6 26 -2 38 6 39 5 25 -13 -11 -15 -11 -16 0 -6 8 6 22 12 32 12 26 0 91 88 124 167 18 45 30 93 34 143 5 73 6 75 30 72 41 -4 73 -34 105 -99 17 -34 43 -75 59 -92 24 -25 32 -28 53 -20 54 20 72 42 73 86 0 59 -46 109 -141 153 -62 28 -78 32 -123 26 l-53 -6 -11 36 c-11 37 -7 64 10 64 6 0 5 -7 -2 -17 -7 -10 8 3 33 29 81 85 135 257 108 340 -12 37 -56 85 -81 88 -67 9 -100 -1 -158 -49 -33 -27 -70 -67 -83 -88 -19 -30 -24 -34 -27 -20 -5 26 45 157 61 157 4 0 7 7 7 14 0 8 13 34 28 58 16 24 46 69 66 100 21 32 51 72 67 89 36 39 36 65 1 105 -21 24 -38 33 -72 37 -25 3 -51 3 -57 0z m-219 -487 c5 -35 2 -58 -9 -82 -9 -19 -18 -34 -21 -34 -5 0 3 85 12 130 1 8 3 21 3 29 2 27 9 6 15 -43z m353 -22 c7 -19 -33 -150 -48 -160 -5 -3 -17 0 -25 7 -8 7 -37 13 -63 13 -38 1 -47 4 -44 17 10 38 126 139 160 139 7 0 16 -7 20 -16z m-183 -237 c17 -13 17 -15 -8 -42 -14 -15 -28 -26 -30 -24 -6 7 6 79 13 79 4 0 15 -6 25 -13z m16 -310 c0 -36 -28 -123 -48 -147 -15 -19 -21 -20 -44 -9 -15 6 -29 18 -32 25 -7 17 3 44 15 44 5 0 9 6 9 13 0 14 78 97 92 97 4 0 8 -10 8 -23z"/>
+            <path d="M140 1185 c-11 -13 -8 -17 19 -26 40 -14 61 -48 37 -61 -24 -14 -19 -26 17 -43 17 -9 43 -22 57 -30 19 -11 27 -11 39 -2 12 9 13 9 7 0 -10 -18 -1 -16 18 3 21 20 21 93 0 122 -8 12 -28 29 -44 37 -39 20 -134 20 -150 0z"/>
+            <path d="M23 793 c-31 -11 3 -109 51 -150 19 -17 26 -33 27 -60 0 -21 2 -51 4 -67 8 -60 14 -294 7 -300 -9 -10 -11 -36 -2 -36 5 0 14 -17 20 -37 13 -41 46 -83 65 -83 29 0 95 119 95 172 0 13 4 28 9 34 19 20 42 146 49 261 8 143 4 168 -15 92 -29 -114 -85 -276 -109 -314 l-25 -40 6 125 c4 69 9 163 11 209 5 80 5 84 -22 112 -15 16 -43 32 -63 35 -40 7 -87 29 -93 42 -1 5 -9 7 -15 5z"/>
+            </g>
+            </g></g></g></g></g></svg>
+        <p class="chinese text">的网站</p>
+        <p class="eng text">Starry Source's website</p>
+    </div>
+    <script src="/tapple/jq.min.js"></script>
+    <p style="width: 100px;left: calc(50% - 50px);position: absolute;top: 0;text-align: center;color: #fff;">往下滑...<span class="eng" style="color: #fff;">Scroll down...</span></p>
+    <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: calc(var(--ph) * 2);">
+        <p class="tit">你好!👋<span class="eng">Hello!👋</span></p>
+        <div class="body">
+            <p>很高兴认识你！😀<span class="eng">Glad to meet you!😀</span></p>
+            <p>没错，我就是星源<span class="eng">Yes, I'm Starry Source</span></p>
+        </div>
+    </div>
+    <div class="box card" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);position: relative;">
+        <p class="tit">自我介绍一下...咳咳<span class="eng">Let me introduce myself...ahem</span></p>
+        <div class="body">
+            <p>星源 <a class="detail" style='--cnt:"真名: 谭景元"'>i</a><span class="eng">Starry Source <a class="detail" style='--cnt:"Real Name: Tan Jingyuan"'>i</a></span></p>
+            <p>国籍: 中国, 星阑<a class="detail" style='--cnt:"我们坚决拥护中国共产党的领导，绝没有分裂国家的想法和行为，在事实上仅有中华人民共和国国籍。\"星阑共和国\"并不是一个真实的国家或团体，是一个虚构的不存在的国家。"'>i</a>
+                <span class="eng">Nationalities: China, Starry Land<a class="detail" style="--cnt:'We FIRMLY support the leadership of the Communist Party of China. We have NO IDEA or ACT of splitting the country. We ONLY have the nationality of the People\'s Republic of China in fact. \'the Republic of Starry Land\' is NOT a real country or group, but a fictional non-existent country.';">i</a></span></p>
+            <p>生日: 2009/05/20<span class="eng">Birthday: May 20,2009</span></p>
+            <p>年龄: 自己算<span class="eng">Age: calculate yourself</span></p>
+            <p>身份: 中学生一个/星阑共和国主席<span class="eng">Identity: A middle school student/the president of Starry Land</span></p>
+        </div>
+    </div>
+    <div class="box card" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);position: relative;">
+        <p class="tit">人生经历与成就<span class="eng">Experiences and achievements</span></p>
+        <div class="body">
+            <s>伟大的马克思主义者，伟大的无产阶级革命家、政治家、军事家、外交家，久经考验的共产主义战士，中国特色社会主义伟大事业的杰出领导者
+                <span class="eng">A great Marxist, a great proletarian revolutionist, politician, militarist and
+                    diplomat, a well tested communist soldier, and an outstanding leader in the great cause of socialism
+                    with Chinese characteristics.</span></s>
+            <p>2015年就读于成都市实验小学<span class="eng">Studied in Chengdu Experimental Primary School in 2015.</span></p>
+            <p>2021年就读于成都市七中育才汇源校区<span class="eng">Studied in Chengdu No.7 Yucai Middle School Huiyuan Campus in
+                    2021.</span></p>
+            <p>曾获得 CSP普及组一等奖<span class="eng">Got first prize in CSP-J</span></p>
+            <p>曾获得 蓝桥杯国赛三等奖<span class="eng">Got third prize in Lanqiao national competition</span></p>
+            <p>更多记不清了<span class="eng">I forget others</span></p>
+        </div>
+    </div>
+    
+<div class="box card jt" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);backdrop-filter: none;background-color: #282828 !important;">
+        <p class="tit"><span class="shine" style="--color:#2374b7;--colorshine:#76cfff;--speed:4;">精通各种语言</span><span class="eng">Be proficient in many languages</span></p>
+        <div class="body">
+            <div><p style="margin: 0;">Scratch</p>
+                <div><div><div style="background: #ffab19;width: 99%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Markdown</p>
+                <div><div><div style="background: #bebebe;width: 85%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">CSS</p>
+                <div><div><div style="background: #4061e8;width: 78%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Html</p>
+                <div><div><div style="background: #d66022;width: 70%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Python</p>
+                <div><div><div style="background: #4db8a6;width: 52%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Javascript</p>
+                <div><div><div style="background: #e9c900;width: 46%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">C++</p>
+                <div><div><div style="background: #6c94c9;width: 42%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Cmd</p>
+                <div><div><div style="background: #aaaaaa;width: 40%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">C#</p>
+                <div><div><div style="background: #64047f;width: 30%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Vbs</p>
+                <div><div><div style="background: #a2e0ff;width: 8%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+            <div><p style="margin: 0;">Powershell</p>
+                <div><div><div style="background: #3e6dbf;width: 7%;height: 100%;border-radius: 10px;"
+                    class="highlight width"></div></div></div></div>
+        </div>
+    </div>
+    <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
+        <p class="tit">擅长...<span class="eng">Be talented in...</span></p>
+        <div class="body">
+            <p>瞎装各种系统<span class="eng">Installing many kinds of systems happily</span></p>
+            <p>把各种软件都换成预览版<span class="eng">Changing all kinds apps to preview/beta version</span></p>
+            <p>剪视频<span class="eng">Editing videos</span></p>
+            <s>唱🎤、跳💃、Rap😲、篮球🏀<span class="eng">Singing🎤, dancing💃, rapping😲 and palying basketball🏀</span></s>
+            <p>做作业<span class="eng">Doing <s>housework</s> homework</span></p>
+        </div>
+    </div>
+    <div class="box card fx h stop-center" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
+        <p class="tit">我的项目<span class="eng">My projects...</span></p>
+        <div class="body">
+            <p>往下滑...<span class="eng">Scroll down...</span></p>
+        </div>
+    </div>
+    <div class="box text center" style="margin-top: var(--ph);">
+        <h1 class="trans b-s" style="font-size: 90px;"><span class="shine" style="--color:#7422ae;--colorshine:#487fff;--speed:2;">Windows 12 网页版</span><span class="eng">Windows 12 Online</span></h1>
+    </div>
+    <div class="box card pjc defc" style="width: 50%;margin-left: 25%;margin-top: var(--ph);" id="win12">
+        <p class="tit">Windows 12 网页版<span class="eng">Windows 12 Online</span></p>
+        <div class="body">
+            <p>使用html,css和js制作，在网上通过网页的形式对 windows12 进行创新<span class="eng">Made by html, css and js, create windows12 and show it by webpage</span></p>
+            <p>丝滑的动画和精美的UI设计是项目的特色<span class="eng">Silky animation and beautiful UI design are the feature of this project</span></p>
+            <div style="display: flex;" class="tool">
+                <a href="http://tjy-gitnub.github.io/win12/desktop.html">
+                    <p>前往体验</p>
+                    <span class="eng">Go to try</span>
+                </a>
+                <a href="http://github.com/tjy-gitnub/win12">
+                    <p>项目地址</p>
+                    <span class="eng">link of the code</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="box text center" style="margin-top: var(--ph);">
+        <h1 class="trans b-s" style="font-size: 90px;"><span class="shine" style="--color:#2983cc;--colorshine:#76cfff;--speed:2;">尼科夫在线工具</span><span class="eng">Nikov Online Tool</span></h1>
+    </div>
+    <div class="box card pjc" style="width: 50%;margin-left: 25%;margin-top: var(--ph);" id="nikov">
+        <p class="tit">尼科夫在线工具<span class="eng">Nikov Online Tool</span></p>
+        <div class="body">
+            <p>一个专用于坑人的网站，在注册过程中设置了重重关卡，无人能够成功<span class="eng">A website to cheat others. I set many hurdles in the registration process. Nobody can succeed</span></p>
+            <p>⚠ 注意：高血压患者慎用！<span class="eng">⚠ Notice: Hypertension patients should use it with caution!</span></p>
+            <div style="display: flex;" class="tool">
+                <a href="http://tjy-gitnub.github.io/nikov">
+                    <p>前往体验</p>
+                    <span class="eng">Go to try</span>
+                </a>
+                <a href="http://github.com/tjy-gitnub/nikov">
+                    <p>项目地址</p>
+                    <span class="eng">link of the code</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="box text center" style="margin-top: var(--ph);">
+        <h1 class="trans b-s" style="font-size: 90px;"><span class="shine" style="--color:#2983cc;--colorshine:#76cfff;--speed:2;">Tapple 滚动监测</span><span class="eng">Tapple Scrolling Monitoring</span></h1>
+    </div>
+    <div class="box card pjc defc" style="width: 50%;margin-left: 25%;margin-top: var(--ph);" id="tapple">
+        <p class="tit">Tapple 滚动监测<span class="eng">Tapple Scrolling Monitoring</span></p>
+        <div class="body">
+            <p>一个滚动监测样式库，灵感来源于苹果官网，本网站就是使用的此样式库<span class="eng">A scrolling monitoring style gallery, the inspiration comes from official website of Apple.This website is power by it.</span></p>
+            <p>使用简单方便，仅需要设置class即可<span class="eng">The way to use it is very easy, just need to set class</span></p>
+            <div style="display: flex;" class="tool">
+                <a href="http://tjy-gitnub.github.io/tapple">
+                    <p>前往预览</p>
+                    <span class="eng">Go to view</span>
+                </a>
+                <a href="http://github.com/tjy-gitnub/tapple">
+                    <p>项目地址</p>
+                    <span class="eng">link of the code</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="box card" style="width: 50%;margin-left: 25%;margin-top: var(--ph);">
+        <p class="tit">星阑共和国<span class="eng">the Republic of Starry Land</span></p>
+        <div class="body">
+            <p>这是一个虚构的国家，是大育才联盟中的一员<span class="eng">This is a fictional country, a member of the Big Yucai Alliance</span></p>
+            <p>与育才第一大国苡莟共和国是友好合作关系<span class="eng">We have a friendly and cooperative relationship with the Republic of Braceland, the largest country in the Yucai</span></p>
+            <p>国家官网 <a href="https://starry-land.github.io" class="jump">starry-land.github.io</a><span class="eng">The official website <a href="https://starry-land.github.io" class="jump">starry-land.github.io</a></span></p>
+            <p>扶摇报为国家官方报纸 <a href="https://starry-land.github.io/fuyaobao" class="jump">starry-land.github.io/fuyaobao</a><span class="eng">The Fuyao Newspaper is the official newspaper <a href="https://starry-land.github.io/fuyaobao" class="jump">starry-land.github.io/fuyaobao</a></span></p>
+        </div>
+    </div>
+    <div class="box card fx h func" style="--speed:5;width: 50%;margin-left: 25%;margin-top: var(--ph);">
+        <p class="tit">联系方式<span class="eng">Contact</span></p>
+        <div class="body">
+            <p>邮件: <a href="mailto:starry-source@outlook.com" class="jump">starry-source@outlook.com</a><span class="eng">E-mail: <a href="mailto:starry-source@outlook.com" class="jump">starry-source@outlook.com</a></span></p>
+            <p>哔哩哔哩: <a href="http://space.bilibili.com/2010692096" class="jump">Starry-Source</a><span class="eng">Bilibili: <a href="http://space.bilibili.com/2010692096" class="jump">Starry-Source</a></span></p>
+            <p>欢迎 <a href="https://teams.live.com/l/invite/FEArwM_AZuK3lErcQM" class="jump">加我的 Teams</a><span class="eng">Welcome to <a href="https://teams.live.com/l/invite/FEArwM_AZuK3lErcQM" class="jump">join me on Teams</a></span></p>
+        </div>
+    </div>
+    <div class="box text center lock" style="margin-top: var(--ph);">
+        <h1 style="font-size: 90px;"><span  style="color: #fff;">没别的了</span><span class="eng">That's all</span></h1>
+    </div>
+    <!-- 预加载 -->
+    <img src="win12.svg" style="width: 0;height: 0;opacity: 0;border: 0;margin: 0;">
+    <img src="nikov.svg" style="width: 0;height: 0;opacity: 0;border: 0;margin: 0;">
+    <script src="/tapple/scroll.js"></script>
+    <script>
+        my_scroll=(t)=>{
+            if(t==0){
+                $('#title>.xing').css('transform',`translateY(100px)`);
+                $('#title>.xing').css('opacity',`0`);
+                $('#title>.yuan').css('transform',`translateY(100px)`);
+                $('#title>.yuan').css('opacity',`0`);
+                $('#title>.text').css('transform',`translateY(50px)`);
+                $('#title>.text').css('opacity',`0`);
+            }else if(0<t && t<100){
+                $('#title>.xing').css('transform',`translateY(${(100-t)}px)`);
+                $('#title>.xing').css('opacity',`${(t/100)}`);
+                $('#title>.yuan').css('transform',`translateY(100px)`);
+                $('#title>.yuan').css('opacity',`0`);
+            }else if(t>=100 && t<200){
+                $('#title>.xing').css('transform',`translateY(0)`);
+                $('#title>.xing').css('opacity',`1`);
+                $('#title>.yuan').css('transform',`translateY(${(200-t)}px)`);
+                $('#title>.yuan').css('opacity',`${((t-100)/100)}`);
+                $('#title>.text').css('transform',`translateY(50px)`);
+                $('#title>.text').css('opacity',`0`);
+            }else if(t>=200 && t<300){
+                $('#title>.yuan').css('transform',`translateY(0)`);
+                $('#title>.yuan').css('opacity',`1`);
+                $('#title>.text').css('transform',`translateY(0)`);
+                $('#title>.text').css('opacity',`1`);
+                $('#title').show(200);
+            }else if(t<400){
+                $('#title>.xing').css('transform',`translateY(0)`);
+                $('#title>.xing').css('opacity',`1`);
+                $('#title>.yuan').css('transform',`translateY(0)`);
+                $('#title>.yuan').css('opacity',`1`);
+                $('#title>.text').css('transform',`translateY(0)`);
+                $('#title>.text').css('opacity',`1`);
+                $('#title').show(200);
+            }else{
+                $('#title').hide(200);
+            }
+            const box_win12 = $('#win12')[0];
+            if(t<box_win12.offsetTop+box_win12.offsetHeight&&box_win12.offsetTop-ph<t){
+                if(!$('body').hasClass('win12')) $('body').addClass('win12');
+            }else{
+                $('body').removeClass('win12');
+            }
+            const box_nikov = $('#nikov')[0];
+            if(t<box_nikov.offsetTop+box_nikov.offsetHeight&&box_nikov.offsetTop-ph<t){
+                if(!$('body').hasClass('nikov')) $('body').addClass('nikov');
+            }else{
+                $('body').removeClass('nikov');
+            }
+        }
+    </script>
+    <!-- <img src="https://bing.com/th?id=OHR.Trossachs_ZH-CN9299955040_UHD.jpg&qlt=100" alt=""> -->
+</body>
+
+</html>
