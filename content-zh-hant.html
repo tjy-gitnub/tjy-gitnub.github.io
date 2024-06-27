@@ -44,7 +44,7 @@
                 overflow: hidden;
             }
             #stt:not(.show){
-                right: -50px;
+                transform: translateX(calc(100% + 30px));
             }
             #stt{
                 position: fixed;z-index: 8;bottom: 15px;right: 15px;padding: 10px 20px;background-color: #2983cc;color: #fff;border-radius: 10px;display: flex;flex-direction: column;align-items: center;transition: 100ms;box-shadow: #00000050 0 5px 15px;
@@ -293,6 +293,7 @@ document.body.onload=()=>{
     <div class="lay">
         <div class="card">
             <div class="body">
+                <p>---正在施工...---</p>
                 <p>Windows 12 網頁版</p>
                 <p>Nikov 在線工具</p>
                 <p>Tapple 頁面滾動特效</p>
