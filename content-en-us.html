@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Source</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <script src="/tapple/jq.min.js"></script>
+
+    <div id="ldb">
+        <style>
+            #ldb{
+                filter: contrast(1);
+                display: block;
+                position: fixed;
+                top: 0;left: 0;height: 100%;width: 100%;
+                z-index: 7;
+                background-image: 
+                    radial-gradient(circle at 30% 30%,#32ffea30,#00000000 80px),
+                    radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 160px),
+                    radial-gradient(circle at 20% 70%,#3da86630,#00000000 140px),
+                    radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
+                overflow: auto;
+            }
+            #ldb>*{
+                color: #000;
+                white-space-collapse:preserve;
+                word-break:keep-all;
+                padding: 20px;
+                margin-top: 0;
+            }
+            #ldb>*>.highlighta{
+                transition: 200ms ease-out;
+            }
+            #ldb>*>.highlighta:not(.show){
+                transform: scale(0.9) translateY(70px);
+                opacity: 0;
+            }
+            body{
+                overflow: hidden;
+            }
+            #stt:not(.show){
+                transform: translateX(calc(100% + 30px));
+            }
+            #stt{
+                position: fixed;z-index: 8;bottom: 15px;right: 15px;padding: 10px 20px;background-color: #2983cc;color: #fff;border-radius: 10px;display: flex;flex-direction: column;align-items: center;transition: 100ms;box-shadow: #00000050 0 5px 15px;
+            }
+            #stt:hover{
+                opacity: 0.8;
+            }
+        </style>
+        <div class="lay" style="margin: 0;">
+            <p style="font-size: 40px;">During loading...</p>
+            <p style="font-size: 20px;">slide down and take a look >u-)o</p>
+        </div>
+        <div class="lay">
+            <div class="highlighta">
+            <p style="font-size: 30px;margin:0 10px">渔家傲·Starry Source</p>
+            <p style="font-size: 20px;">The wind leading to night,
+turning head facing sky,
+the moon and stars shine.
+Watch the myth and poems died,
+stars rise,
+lonely moon so high.
+
+Years and water gone by,
+writing down the past time,
+stories of the mountain behind.
+Strong wind with life and light,
+through the sky,
+fly in the world so wide.</p>
+            </div>
+        </div>
+        <div class="lay">
+            <p style="font-size: 40px;">Your network is a bit slow...</p>
+            <p style="font-size: 20px;">There's a longer one</p>
+        </div>
+        <div class="lay">
+            <div class="highlighta" id="drl">
+            <p style="font-size: 30px;margin:0 10px">Dreamlike·Starry Source</p>
+            <p style="font-size: 20px;">Well, it's really hard to translate...
+If you are able to translate it, you can try:)
+
+徜徉于天地造化者神州大地，顾环己，山岳峥嵘，峰峦屹立。
+徘徊在古今流转间金波秋意，思泛起，时节逸远，年随风去。
+
+暮风兮向晚者忽吹拂，袍袖兮因风者飏簌簌。迎面扑，转头顾。
+旷野兮接天者无边处，婵娟兮星海者耀千古。天地苍，随月溯。
+
+漫漫千年波澜一路，盛时广厦败时土。
+风月花雪北风吹处，文里权兴政覆，诗里斜阳草树。
+颤颤百载风云无数，枭者英雄义者负。
+青砖黛瓦红墙不复，别去亭台楼阁，送走诗歌词赋。
+
+沧桑再顾，沧海一粟，竹笛悠悠兮波起伏。
+星源起处，星辰一如，银汉皎皎兮月明孤。
+
+嗟夫叹往事，看江水起山巅、纵平原、拂过峰峦、遍走人间。
+噫唏望天边，观东风生浩海、过江面、吹散浮云、巨浪滔天。
+
+日轮月转一俯仰间，天改地换两百余年。
+贼起寇入千年神州，山赤海血万里红遍。
+
+观存亡者河山，哀怜不露；看兴衰者黄土，沧桑尽书。
+阅河山者何人？泊船江月，寄心林泉邃处。
+叹过往者怀古，鉴于喜怒；望后来者志笃，行之阔步。
+阅江山者何人？拄杖山路，纵情江海鸿鹄。
+
+涉河溪，济江海，可届天涯鲜迹处。
+越群巅，行漫路，能达无央沧溟渚。
+
+山巅顾，千里扶摇极天而赴，虎咆龙吟殷壑谷。
+东风携鹏啼鸾音，浩浩青云负，盈于寰宇乾坤舞。
+星源处，一缕清风起窗以入，青冥红霞布棂户。
+暮色传蝉歌虫鸣，悠悠明月浮，畅于天地神心舒。</p>
+            </div>
+        </div>
+    </div>
+    <a class="a" id="stt" onclick="
+        $('#ldb').hide();
+        document.body.style.overflow='auto';
+        $(this).remove()"><span style="font-size: 15px;">Loading completed</span><span style="font-size: 30px;">Let's start</span></a>
+    <script>
+        
+
+document.body.onload=()=>{
+    $('#stt').addClass('show')
+    
+    // $('#ldb').hide();
+    //     document.body.style.overflow='auto';
+};
+    </script>
+
+    <style>
+        /* Eng style */
+        body{
+            font-weight: 200;
+        }
+        #inf {
+            margin: 100vh 250px 0 0;
+        }
+        #inf>.card {
+            height: calc(100% - 140px);
+            width: calc(100% - 390px);
+            overflow: auto;
+            max-height: 850px;
+        }
+        #inf>.card>.chart>div>p:first-child {
+            min-width: 200px;
+        }
+    </style>
+    <div id="hd" style="width: 460px; left:calc(50% - 290px);transform: translateX(40px);">
+        <img src="en.png">
+    </div>
+    <div id="inf" class="lay">
+        <div class="card">
+            <div class="tit">
+                <p style="font-size: 38px;">Basic information </p>
+                <p style="font-size: 24px;"><nobr>(To be verified, just for reference >u-)o</nobr></p>
+            </div>
+            <div class="chart body">
+                <div>
+                    <p>Name</p>
+                    <p>Starry Source</p>
+                </div>
+                <div>
+                    <p>Nationality</p>
+                    <p>PRC</p>
+                </div>
+                <div>
+                    <p>Ethnicity</p>
+                    <p>Han</p>
+                </div>
+                <div>
+                    <p>Native place</p>
+                    <p>Changsha, Hunan</p>
+                </div>
+                <div>
+                    <p>Residence</p>
+                    <p>Chengdu, Sichuan</p>
+                </div>
+                <div>
+                    <p>Birthday</p>
+                    <p>Mid-May 2009</p>
+                </div>
+                <div> 
+                    <!-- Sex -->
+                    <p>Biological sex</p>
+                    <p>Male</p>
+                </div>
+                <div>
+                    <!-- Gender -->
+                    <p>Gender</p>
+                    <p>Male</p>
+                </div>
+                <div>
+                    <p>Sexual orientation</p>
+                    <p>Opposite sex</p>
+                </div>
+                <hr>
+                <div>
+                    <p>Marital status</p>
+                    <p>Unmarried</p>
+                </div>
+                <div>
+                    <p>Political landscape</p>
+                    <p>The masses</p>
+                </div>
+                <div>
+                    <p>Education</p>
+                    <p>Junior high school</p>
+                </div>
+                <div>
+                    <p>Unit</p>
+                    <p>Chengdu Junior High School Graduate Reception Home</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="grt" class="lay">
+        <div style="width: max-content;text-shadow: #000 0 0 20px;">
+        <p style="font-size: 60px;">Nice to meet you!👋</p>
+        <p style="font-size: 35px;">Welcome to Stsc's personal homepage</p>
+        <p style="font-size: 13px;color: #aaa;font-weight: 100;">All information on this website is just for reference and doesn't guarantee the authenticity and correctness</p></div>
+    </div>
+    <div id="exp" class="lay">
+        <p style="font-size: 50px;text-align: center;margin-bottom: 100px;">Major life experience and achievements</p>
+        <div class="card">
+            <div class="body">
+                <p style="margin: 20px 20px 10px 30px;">Born in 2009 in Chengdu, Sichuan</p>
+                <p style="margin: 0 20px 10px 30px;">Attended Chengdu E* Primary School in 2015</p>
+                <p style="margin: 0 20px 10px 30px;">Attended Chengdu Y* M* School H* C* in 2021</p>
+                <p style="margin: 0 20px 10px 35px;">······</p>
+                <hr>
+                <p style="margin: 0 20px 10px 30px;">Has won the first prize in the second round of CSP-J</p>
+                <p style="margin: 0 20px 10px 30px;">Has won the second prize in the second round of CSP-S</p>
+                <p style="margin: 0 20px 10px 35px;">······</p>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <div class="card">
+            <p style="font-size: 40px;" class="tit center"><span class="shine" style="--color:#3a8fe9;--colorshine:#8feaff;--speed:4;">Can use various languages</span></p>
+            <div class="body" id="jt">
+                <div><p style="margin: 0;">Scratch</p>
+                    <div><div style="background: #ffab19;width: 98%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">Markdown</p>
+                    <div><div style="background: #bebebe;width: 85%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">CSS</p>
+                    <div><div style="background: #4061e8;width: 77%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">Html</p>
+                    <div><div style="background: #d66022;width: 68%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">Javascript</p>
+                    <div><div style="background: #e9c900;width: 46%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">Python</p>
+                    <div><div style="background: #4db8a6;width: 43%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">C++</p>
+                    <div><div style="background: #6c94c9;width: 35%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">Cmd</p>
+                    <div><div style="background: #aaaaaa;width: 30%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">C#</p>
+                    <div><div style="background: #64047f;width: 28%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">Vbs</p>
+                    <div><div style="background: #a2e0ff;width: 7%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+                <div><p style="margin: 0;">Powershell</p>
+                    <div><div style="background: #3e6dbf;width: 5%;height: 100%;border-radius: 10px;"
+                        class="highlight width"></div></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <p style="font-size: 50px;text-align: center;margin-bottom: 100px;">Habits</p>
+        <div id="hab">
+            <div class="cd">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
+                    <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                  </svg>
+                <span>coding</span>
+            </div>
+            <div class="cd">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+                    <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+                  </svg>
+                <span>composing poetry</span>
+            </div>
+            <div class="cd">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                    <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                  </svg>
+                <span>reading</span>
+            </div>
+            <div class="cd">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                    <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+                  </svg>
+                <span>doing homework</span>
+            </div>
+            <div class="cd">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars" viewBox="0 0 16 16">
+                    <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"/>
+                    <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+                  </svg>
+                <span>sleeping</span>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <div style="width: max-content;text-shadow: #000 0 0 20px;">
+        <p style="font-size: 50px;">My project</p>
+        <p style="font-size: 18px;">There're some of the projects that I done, <br>forgive for my poor techniques >u-)o</p>
+    </div></div>
+    <div class="lay">
+        <div class="card">
+            <div class="body">
+                <p>---under construction...---</p>
+                <p>Windows 12 网页版</p>
+                <p>Nikov 在线工具</p>
+                <p>Tapple 页面滚动特效</p>
+                <p>多分 破解版</p>
+            </div>
+        </div>
+    </div>
+    <div class="lay" id="ft" style="user-select: none;">
+        <div style="display: flex;flex-direction: column;flex-grow: 1;align-items: center;justify-content: center;">
+        <svg viewBox="0,0,154,317" overflow="hidden" style="height: 20vh;"><g transform="translate(-495 -69)"><path d="M507.97 270.41C507.993 273.509 497.056 191.746 506.018 142.069 509.851 120.827 518.059 93.8332 539.196 82.081 556.985 72.1902 589.487 72.3983 600.615 89.9134 607.906 101.382 600.405 122.586 588.417 128.879 576.523 135.122 552.385 134.021 550.039 116.702 548.105 102.4 558.899 93.8824 574.326 99.35 584.516 102.96 580.672 113.551 580.672 113.551" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M520.611 148.936C519.836 144.32 522.753 137.42 527.556 136.586 532.748 135.687 539.04 141.528 539.464 146.56 539.865 151.268 534.963 157.196 530.037 157.484 525.719 157.737 521.298 153.026 520.611 148.936Z" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M617.535 133.038C617.127 129.352 619.829 124.405 623.427 123.636 628.049 122.646 634.005 126.953 635.214 131.553 636.439 136.187 633.529 143.651 628.831 144.42 623.574 145.28 618.125 138.369 617.535 133.038Z" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M538.491 152.407C538.491 152.407 559.35 161.627 574.086 160.378 602.187 157.997 617.677 143.632 617.489 143.495" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M569.562 133.495C569.562 133.495 567.416 165.912 569.204 180.157 570.992 194.401 570.398 201.495 570.398 201.495" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M527.49 181.096C527.49 181.096 547.689 182.704 557.805 182.474 569.841 182.206 582.005 181.713 593.782 179.214 601.606 177.555 616.49 171.496 616.49 171.496" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M526.491 231.499C526.491 231.499 526.54 217.638 533.163 210.697 546.562 196.664 574.854 204.072 591.752 204.034 617.299 203.978 624.491 191.499 624.491 191.499" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M526.579 249.506C526.579 249.506 527.118 264.591 525.516 271.881 521.969 287.989 508.611 301.292 506.9 317.7 505.528 330.87 507.495 345.241 513.937 356.789 517.77 363.662 531.486 372.506 531.486 372.506" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M526.018 317.508C526.018 317.508 520.78 327.281 529.683 336.73 535.787 343.205 545.488 336.331 545.488 336.331" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M621.491 219.503C621.491 219.503 604.286 226.405 589.908 225.999 578.591 225.68 561.199 220.3 552.911 228.5 540.056 241.218 547.932 271.505 544.543 292.879 543.395 300.122 540.491 314.503 540.491 314.503" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M590.353 231.506C590.353 231.506 567.908 254.905 563.825 269.94 561.47 278.623 559.732 286.309 565.817 296.865 570.164 304.407 591.895 309.147 593.388 326.271 594.416 338.021 587.522 346.371 581.273 354.459 574.613 363.081 555.49 374.506 555.49 374.506" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M575.492 254.504C575.492 254.504 596.538 254.921 603.828 261.326 610.366 267.072 614.858 277.183 613.114 285.696 610.618 297.855 587.218 312.504 587.218 312.504" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M569.492 273.508C569.492 273.508 582.031 278.006 587.271 281.918 597.389 289.476 607.499 298.57 612.422 310.1 616.478 319.599 617.94 331.103 614.779 340.925 609.665 356.815 596.281 372.686 582.507 379.508" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M564.364 320.508C564.364 320.508 571.743 326.748 568.794 335.061 565.84 343.377 554.49 350.508 554.49 350.508" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/><path d="M636.575 159.501C636.575 159.501 642.736 200.056 639.611 243.143 637.345 274.403 629.495 313.501 629.495 313.501" stroke="#9A1600" stroke-width="11.3333" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#FFFFFF" fill-rule="evenodd" fill-opacity="0"/></g></svg>
+        <p style="margin-top: 10px;color: #aaa;">Starry Source</p>
+        <p style="margin-top: 10px;color: #aaa;">July 2024</p>
+        <div style="margin-top: 20px;">
+            <p>"Starry Source" at begining are from <a href="http://www.foundertype.com/" class="a jump" target="_blank">FounderType</a></p>
+            <p>Background image is from <a href="http://www.microsoft.com/zh-cn/bing/bing-wallpaper" class="a jump">Bing Wallpaper</a></p>
+        </div></div>
+        <p style="font-size: 18px;color: #555;margin-bottom: 5px;">千星源起婵娟银河皎皎耀天黛<br>万山越尽扶摇东风浩浩舞乾坤</p>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
