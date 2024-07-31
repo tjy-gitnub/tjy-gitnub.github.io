@@ -7,6 +7,16 @@ body {
     background-size: cover;
     background-color: #222;
     scroll-behavior: smooth;
+    --text: #f2f2f2;
+    overflow: hidden;
+}
+
+body.light {
+    background: url(bgl.jpg) center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #eee;
+    --text: #000;
 }
 
 .a {
@@ -100,7 +110,12 @@ hr {
     flex-direction: column;
 }
 
-.card>.tit{
+body.light .card{
+    background-color: #f4f4f4a0;
+    color: #000;
+}
+
+.card>.tit {
     font-size: 40px;
     line-height: 1.1;
     font-weight: 500;
@@ -108,37 +123,126 @@ hr {
     text-align: start;
 }
 
-.card>.tit.center{
+.card>.tit.center {
     text-align: center;
 }
 
-.card>.body{
+.card>.body {
     /* padding: 20px 30px; */
     width: 100%;
     flex-grow: 1;
 }
 
+#ldb {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 7;
+    background-image:
+        radial-gradient(circle at 30% 30%, #197e7430, #00000000 80px),
+        radial-gradient(circle at 70% 60%, #9e751730, #00000000 160px),
+        radial-gradient(circle at 20% 70%, #2b6e4530, #00000000 140px),
+        radial-gradient(circle at 0 0, #233e53 0 30%, #3a1d2e 70%);
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    color: #f0f0f0;
+}
+
+body.light>#ldb{
+    background-image: radial-gradient(circle at 30% 30%,#32ffea30,#00000000 80px),
+    radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 160px),
+    radial-gradient(circle at 20% 70%,#3da86630,#00000000 140px),
+    radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
+    /* color: #000; */
+}
+
+body.light>#ldb .lay{
+    color: #000;
+}
 
 .shine {
-    --speed:1;
+    --speed: 1;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(110deg, var(--color) 0 40%, var(--colorshine) 50% 50% ,var(--color) 60%);
+    background-image: linear-gradient(110deg, var(--color) 0 40%, var(--colorshine) 50% 50%, var(--color) 60%);
     background-size: 200% 100%;
     background-position: calc(var(--scroll) * var(--speed)) 50%;
 }
 
 
-.lay {
+#ldb>.lay {
+    height: 100%;
+    padding: 0 20px;
+    overflow-y: auto;
+    align-items: stretch;
+    display: none;
+    opacity: 0;
+    width: max-content;
+    transition: opacity 485ms;
+}
+
+.lay{
     height: 100vh;
     align-items: center;
     justify-content: center;
-    color: #fff;
     display: flex;
     margin-top: 50vh;
     flex-direction: column;
+    color: #f0f0f0;
 }
 
+body.light .card{
+    color: #000;
+}
+
+#ldb>.lay.show0 {
+    display: flex;
+}
+
+#ldb>.lay.show {
+    opacity: 1;
+}
+
+#stt:not(.show) {
+    transform: translateX(calc(100% + 30px));
+}
+
+#stt {
+    position: fixed;
+    z-index: 8;
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 20px;
+    background-color: #2983cc50;
+    color: #ffffffa0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 100ms;
+    box-shadow: #2983cc50 0 4px 15px;
+    backdrop-filter: blur(17px);
+    transform: scale(0.97);
+}
+
+#stt:hover {
+    background-color: #2983cc90;
+    color: #fff;
+    transform: none;
+    box-shadow: #00000050 0 4px 13px;
+}
+
+#stt:active {
+    background-color: #2983cc70;
+    color: #fff;
+    box-shadow: none;
+    opacity: 0.6;
+    transform: scale(0.97);
+}
 #inf {
     margin: 100vh 200px 0 0;
 }
@@ -169,7 +273,7 @@ hr {
     min-width: 100px;
 }
 
-#jt{
+#jt {
     display: flex;
     justify-content: space-between;
     margin-top: 2px;
@@ -182,17 +286,17 @@ hr {
     align-items: center;
 } */
 
-#jt>div{
+#jt>div {
     display: flex;
     padding: 2px 20px;
     min-width: 600px;
 }
 
-#jt>div>p{
+#jt>div>p {
     width: 100px;
 }
 
-#jt>div>div{
+#jt>div>div {
     background: #7f7f7f50;
     border-radius: 20px;
     height: 8px;
@@ -203,7 +307,7 @@ hr {
 }
 
 
-#jt>div>div:hover{
+#jt>div>div:hover {
     margin-top: 6px;
     height: 14px;
 }
@@ -217,13 +321,13 @@ hr {
     transition: 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
-#hab{
+#hab {
     width: calc(100% - 200px);
     min-width: 400px;
     max-width: 800px;
     background-color: #33333330;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     /* column-count: auto; */
     /* column-width: 100px; */
     flex-wrap: wrap;
@@ -234,7 +338,7 @@ hr {
     backdrop-filter: blur(15px) brightness(1.2);
 }
 
-#hab>.cd{
+#hab>.cd {
     /* margin: 5px; */
     background-color: #00000050;
     width: 100%;
@@ -244,26 +348,87 @@ hr {
     align-items: center;
     user-select: none;
 }
-#hab>.cd:hover>svg{
+
+#hab>.cd:hover>svg {
     transform: scale(40%);
 }
 
-#hab>.cd>svg{
+#hab>.cd>svg {
     height: 100%;
     width: max-content;
     transform: scale(35%);
     transition: 200ms;
 }
 
-#hab>.cd>span{
+#hab>.cd>span {
     flex-grow: 1;
     font-size: 21px;
 }
 
+.card.prj{
+    width: 50%;
+    min-width: 450px;
+    max-width: 700px;
+}
+.card.prj>.body{
+    padding: 0 20px 0px 20px;
+    width: unset;
+    line-height: 1.5;
+}
 
+.card.prj>.body>span{
+    background-color: #4a4a4a;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 15px;
+    padding: 3px 7px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: #00000090 0 1px 3px;
+    margin: -15px 0 15px 5px;
+    user-select: none;
 
+}
+.card.prj>.body>span>svg{
+    fill: #61b8ff;
+    margin-right: 4px;
+}
 
-#ft{
+.ops{
+    display: flex;
+    /* flex-direction: column; */
+    padding: 25px 0 20px 0;
+    width: 100%;
+    user-select: none;
+}
+
+.ops>.a{
+    /* width: 100%; */
+    padding: 10px 10px;
+    margin: 1px;
+    border-radius: 6px;
+    transition: 100ms;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+.ops>.a>svg{
+    height: 25px;
+    width: max-content;
+    margin-bottom: 5px;
+}
+
+.ops>.a:hover{
+    background-color: #7f7f7f40;
+}
+
+.ops>.a:active{
+    opacity: 0.6;
+}
+
+#ft {
     background-color: #222;
-    
+
 }

@@ -5,18 +5,27 @@ function init() {
 }
 init();
 let g_highlight=$('.highlight');
-let g_highlighta=$('.highlighta');
+// let g_highlighta=$('.highlighta');
 let g_percent=$('.shine');
-document.querySelector('#ldb').addEventListener('scroll',()=>{
-    for (let i = 0; i < g_highlighta.length; i++) {
-        const box = g_highlighta[i];
-        if($('#ldb').scrollTop()+ph-box.offsetTop>100){
-            $(box).addClass('show');
-        }else{
-            $(box).removeClass('show');
-        }
-    }
-});
+// document.querySelector('#ldb').addEventListener('scroll',()=>{
+//     for (let i = 0; i < g_highlighta.length; i++) {
+//         const box = g_highlighta[i];
+//         if($('#ldb').scrollTop()+ph-box.offsetTop>100){
+//             $(box).addClass('show');
+//         }else{
+//             $(box).removeClass('show');
+//         }
+//     }
+// });
+
+let thn=false;
+function tgtheme(b=true) {
+    if(b)$('body').addClass('light');
+    else $('body').removeClass('light');
+}
+if(location.search=='?light'){
+    tgtheme();
+}
 document.addEventListener('scroll',()=>{
     let t=$('html').scrollTop();
     if(0<=t && t/ph*window.innerWidth<(window.innerWidth/2)-180){

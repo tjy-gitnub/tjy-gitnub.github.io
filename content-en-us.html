@@ -4,87 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starry Source</title>
+    <title>星源</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-    <script src="/tapple/jq.min.js"></script>
+    <script src="jq.min.js"></script>
 
     <div id="ldb">
-        <style>
-            #ldb{
-                filter: contrast(1);
-                display: block;
-                position: fixed;
-                top: 0;left: 0;height: 100%;width: 100%;
-                z-index: 7;
-                background-image: 
-                    radial-gradient(circle at 30% 30%,#32ffea30,#00000000 80px),
-                    radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 160px),
-                    radial-gradient(circle at 20% 70%,#3da86630,#00000000 140px),
-                    radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
-                overflow: auto;
-            }
-            #ldb>*{
-                color: #000;
-                white-space-collapse:preserve;
-                word-break:keep-all;
-                padding: 20px;
-                margin-top: 0;
-            }
-            #ldb>*>.highlighta{
-                transition: 200ms ease-out;
-            }
-            #ldb>*>.highlighta:not(.show){
-                transform: scale(0.9) translateY(70px);
-                opacity: 0;
-            }
-            body{
-                overflow: hidden;
-            }
-            #stt:not(.show){
-                transform: translateX(calc(100% + 30px));
-            }
-            #stt{
-                position: fixed;z-index: 8;bottom: 15px;right: 15px;padding: 10px 20px;background-color: #2983cc;color: #fff;border-radius: 10px;display: flex;flex-direction: column;align-items: center;transition: 100ms;box-shadow: #00000050 0 5px 15px;
-            }
-            #stt:hover{
-                opacity: 0.8;
-            }
-        </style>
-        <div class="lay" style="margin: 0;">
-            <p style="font-size: 40px;">During loading...</p>
-            <p style="font-size: 20px;">slide down and take a look >u-)o</p>
+        <div class="lay 0 show0 show" style="margin: 0;">
+            <p style="font-size: 40px;">Hey, pleasure making acquaintance</p>
+            <p style="font-size: 20px;">Welcome to the realm of Starry Source >u-)o</p>
         </div>
-        <div class="lay">
-            <div class="highlighta">
-            <p style="font-size: 30px;margin:0 10px">渔家傲·Starry Source</p>
-            <p style="font-size: 20px;">The wind leading to night,
-turning head facing sky,
-the moon and stars shine.
-Watch the myth and poems died,
-stars rise,
-lonely moon so high.
-
-Years and water gone by,
-writing down the past time,
-stories of the mountain behind.
-Strong wind with life and light,
-through the sky,
-fly in the world so wide.</p>
-            </div>
+        <div class="lay 1" style="margin: 0;">
+            <p style="font-size: 40px;text-align: left;">Soft clouds gently weave the skies, </p>
+            <p style="font-size: 35px;text-align: center;">The Silver River spans the night.</p>
+            <p style="font-size: 30px;text-align: left;">When autumn's breeze meets dew so bright, </p>
+            <p style="font-size: 40px;text-align: right;">It surpasses love in world's every sight.</p>
+            <p style="text-align: right;margin-top: 5px;">———<i>鹊桥仙·纤云弄巧</i> 秦观, translated by AI</p>
         </div>
-        <div class="lay">
-            <p style="font-size: 40px;">Your network is a bit slow...</p>
-            <p style="font-size: 20px;">There's a longer one</p>
+        <div class="lay 2" style="margin: 0;">
+            <p style="font-size: 40px;">The sky meets clouds and dawn's misty veil,</p>
+            <p style="font-size: 30px;text-align: left;">swirling stars like thousands sails going unfurl.</p>
+            <p style="text-align: right;margin-top: 5px;">———<i>渔家傲·天接云涛连晓雾</i> 李清照, translated by AI</p>
         </div>
-        <div class="lay">
-            <div class="highlighta" id="drl">
-            <p style="font-size: 30px;margin:0 10px">Dreamlike·Starry Source</p>
-            <p style="font-size: 20px;">Well, it's really hard to translate...
-If you are able to translate it, you can try:)
-
+        <div class="lay 3" style="margin: 0;">
+            <p style="font-size: 35px;">The wind leading to night, </p>
+            <p style="font-size: 30px;">turning head facing sky, the moon and stars shine.</p>
+            <p style="font-size: 37px;text-align: cenetr;">Watch the myth and poems died,</p>
+            <p style="font-size: 40px;text-align: right;">stars rise, lonely moon so high.</p>
+            <p style="text-align: right;margin-top: 5px;">———<i>渔家傲·星源</i> Starry Source</p>
+        </div>
+        <div class="lay 4" style="margin: 0;">
+            <p style="font-size: 30px;">Looking vicissitudes gone back, feeling just a grain in the lake,</p>
+            <p style="font-size: 33px;text-align: right;">Bamboo flute melodious waves, slowly sway.</p>
+            <p style="text-align: right;margin-top: 5px;">———<i>梦幻·星源</i> Starry Source</p>
+        </div>
+        <div class="lay 5" style="margin: 0;">
+            <p style="font-size: 29px;">Go through centuries, storms terribly strong.</p>
+            <p style="font-size: 33px;">Hawks and heroes, going up and down.</p>
+            <p style="font-size: 25px;text-align: center;">Tiles grey and red walls, no more sight; Myths and memories, fade in night.</p>
+            <p style="font-size: 28px;text-align: right;">
+Poems and verses, bidding the adieu,
+As time goes, leaving helplessly few.</p>
+            <p style="text-align: right;margin-top: 5px;">———<i>梦幻·星源</i> Starry Source, translated by AI</p>
+        </div>
+        <div class="lay 6" style="margin: 0;">
+            <p style="font-size: 35px;">Years and water gone by,</p>
+            <p style="font-size: 30px;">writing down the past time, stories of the mountain behind.</p>
+            <p style="font-size: 37px;text-align: cenetr;">Strong wind with vitality and light,</p>
+            <p style="font-size: 40px;text-align: right;">through the sky, fly in the world so wide.</p>
+            <p style="text-align: right;margin-top: 5px;">———<i>渔家傲·星源</i> Starry Source</p>
+        </div>
+        <div class="lay 7" style="margin: 0;">
+            <p style="font-size: 40px;">Roc soar with wind of thousands miles,</p>
+            <p style="font-size: 30px;text-align: left;">Don't cease! Carry my boat to fairy isles.</p>
+            <p style="text-align: right;margin-top: 5px;">———<i>渔家傲·天接云涛连晓雾</i>李清照 translated by AI</p>
+        </div>
+        <div class="lay l" style="margin: 0; justify-content: unset; height: calc(100% - 70px)">
+            <p style="font-size: 40px;text-align: left;margin: 0 0 10px 10px;">梦幻·星源</p>
+            <p style="font-size: 17px;
+            white-space-collapse:preserve;
+            word-break:keep-all;">
+It's really hard to translate it,
+even with the help of AI.
+No why, you can have a try. 
+Don't forget to tell me by issues~
 徜徉于天地造化者神州大地，顾环己，山岳峥嵘，峰峦屹立。
 徘徊在古今流转间金波秋意，思泛起，时节逸远，年随风去。
 
@@ -117,7 +102,7 @@ If you are able to translate it, you can try:)
 东风携鹏啼鸾音，浩浩青云负，盈于寰宇乾坤舞。
 星源处，一缕清风起窗以入，青冥红霞布棂户。
 暮色传蝉歌虫鸣，悠悠明月浮，畅于天地神心舒。</p>
-            </div>
+            <p style="text-align: right;"></p>
         </div>
     </div>
     <a class="a" id="stt" onclick="
@@ -125,14 +110,41 @@ If you are able to translate it, you can try:)
         document.body.style.overflow='auto';
         $(this).remove()"><span style="font-size: 15px;">Loading completed</span><span style="font-size: 30px;">Let's start</span></a>
     <script>
-        
+let dl=[-1,18,16,17,16,27,18,24];let nt=4850;
+        setTimeout(() => {
+            $('#ldb>.lay.0').removeClass('show');
+            setTimeout(() => {
+                $('#ldb>.lay.0').removeClass('show0');
+            }, 500);
+        }, nt-530);
+for (let i = 1; i < 8; i++) {
+    nt+=dl[i]*1000;
+    setTimeout(() => {
+        $('#ldb>.lay.'+i).addClass('show0');
+        setTimeout(() => {
+        $('#ldb>.lay.'+i).addClass('show');
+            
+        }, 20);
+        setTimeout(() => {
+            $('#ldb>.lay.'+i).removeClass('show');
+            setTimeout(() => {
+                $('#ldb>.lay.'+i).removeClass('show0');
+            }, 500);
+        }, dl[i]*1000-1000);
+    }, nt-dl[i]*1000);
+}
+    setTimeout(() => {
+        $('#ldb>.lay.l').addClass('show0');
+        setTimeout(() => {
+        $('#ldb>.lay.l').addClass('show');
+            
+        }, 20);
+    }, nt);
 
 document.body.onload=()=>{
     $('#stt').addClass('show')
-    
-    // $('#ldb').hide();
-    //     document.body.style.overflow='auto';
 };
+
     </script>
 
     <style>
@@ -225,7 +237,7 @@ document.body.onload=()=>{
         <div style="width: max-content;text-shadow: #000 0 0 20px;">
         <p style="font-size: 60px;">Nice to meet you!👋</p>
         <p style="font-size: 35px;">Welcome to Stsc's personal homepage</p>
-        <p style="font-size: 13px;color: #aaa;font-weight: 100;">All information on this website is just for reference and doesn't guarantee the authenticity and correctness</p></div>
+        <p style="font-size: 13px;color: #ccc;font-weight: 100;">All information on this website is just for reference and doesn't guarantee the authenticity and correctness</p></div>
     </div>
     <div id="exp" class="lay">
         <p style="font-size: 50px;text-align: center;margin-bottom: 100px;">Major life experience and achievements</p>
@@ -325,13 +337,86 @@ document.body.onload=()=>{
         <p style="font-size: 18px;">There're some of the projects that I done, <br>forgive for my poor techniques >u-)o</p>
     </div></div>
     <div class="lay">
-        <div class="card">
+        <div class="card prj">
+            <p class="tit" style="">Windows 12 online</p>
             <div class="body">
-                <p>---under construction...---</p>
-                <p>Windows 12 网页版</p>
-                <p>Nikov 在线工具</p>
-                <p>Tapple 页面滚动特效</p>
-                <p>多分 破解版</p>
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="fill: #ffd562;" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>star 6k+</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
+                    <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                  </svg>html, css, js</span>
+                <p>Using HTML, CSS, and JS to create predictions and innovations for future Windows 12 through web pages.
+                    With wonerful UI design, smooth and rich animations, and various (relatively) advanced features.</p>
+                <div class="ops">
+                <a href="https://tjy-gitnub.github.io/win12/bios.html" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"/>
+                    <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg>Open it now</a>
+                <a href="https://github.com/tjy-gitnub/win12" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>View on Github</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <div class="card prj">
+            <p class="tit" style="">Tapple Scrolling Monitoring</p>
+            <div class="body" onclick="document.body.attributes">
+                
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
+                    <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                  </svg>css, js</span>
+                <p>A scrolling monitoring style library for web pages, with the inspiration comes from website of Apple.A part of this website is powered by it.
+                    Easy to use, just set the 'class' attribute. However, due to its functionality and efficiency, low-end devices with poor hardware may run a little slow when use.
+                </p>
+                <div class="ops">
+                <a href="https://tjy-gitnub.github.io/tapple" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"/>
+                    <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg>Preview it now</a>
+                <a href="https://github.com/tjy-gitnub/tapple" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>View on Github</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <div class="card prj">
+            <p class="tit">Nikov Online Tool</p>
+            <div class="body">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
+                  <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                </svg>html, css, js</span>
+                <p>To play a prank on your friends. A website to cheat your friends, with many hurdles in the registration process. Nobody can succeed.
+                    You can recommend it to someone (take consequences yourself). Notice: Hypertension patients should use it with caution!</p>
+                <div class="ops">
+                <a href="https://tjy-gitnub.github.io/nikov" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"/>
+                    <path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"/>
+                  </svg>Open it now</a>
+                <a href="https://github.com/tjy-gitnub/nikov" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>View on Github</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <div class="card prj">
+            <p class="tit">Duofen Cracking Program</p>
+            <div class="body">
+                
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
+                    <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                  </svg>python</span>
+                <p>I cracked 'Duofen' online score enquiry system of my junior high. It can get some information that cannot be found on the student's terminal, such as rankings, class grades, etc.
+                    <span style="color: #aaa;">For learning and communication purposes only.</span>
+                </p>
+                <div class="ops">
+                
+                <a href="https://github.com/tjy-gitnub/duofen" class="a" style="width: 100%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg>View on Github</a></div>
             </div>
         </div>
     </div>
