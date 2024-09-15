@@ -102,7 +102,7 @@ hr {
 }
 
 .card {
-    background-color: #22222270;
+    background-color: #212121a0;
     backdrop-filter: blur(20px);
     border-radius: 15px;
     box-shadow: #00000070 0 5px 15px;
@@ -166,7 +166,7 @@ body.light>#ldb .lay{
 
 .shine {
     --speed: 1;
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(110deg, var(--color) 0 40%, var(--colorshine) 50% 50%, var(--color) 60%);
     background-size: 200% 100%;
