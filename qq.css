@@ -5,7 +5,7 @@ body {
     background: url(bg.jpg) center;
     background-attachment: fixed;
     background-size: cover;
-    background-color: #222;
+    background-color: #1b3a53;
     scroll-behavior: smooth;
     --text: #f2f2f2;
     /* overflow: hidden; */
@@ -13,7 +13,7 @@ body {
 
 .a {
     text-decoration: none !important;
-    cursor: pointer;
+    /* cursor: pointer; */
     user-select: none;
 }
 
@@ -73,12 +73,14 @@ hr {
 }
 
 .card {
-    background-color: #212121a0;
-    backdrop-filter: blur(20px);
+    background-color: #232323d0;
+    backdrop-filter: saturate(5) contrast(0.7) brightness(0.6) blur(27px);
     border-radius: 15px;
     box-shadow: #00000070 0 5px 15px;
     display: flex;
     flex-direction: column;
+    border: 1.8px solid #ffffff10;
+    min-width: 300px;
 }
 
 .card>.body{
@@ -89,6 +91,7 @@ hr {
 .tit{
     font-size: 30px;
     margin-bottom: 10px;
+    user-select: none;
 }
 
 .ops{
@@ -97,17 +100,16 @@ hr {
     width: 100%;
     padding: 25px 0 20px 0;
     user-select: none;
-
 }
 
 .ops>.a{
     /* display: flex;
     flex-direction: column; */
     /* width: 100%; */
-    padding: 10px 10px;
+    padding: 8px 15px;
     margin: 1px;
     border-radius: 6px;
-    transition: 100ms;
+    transition: 50ms;
     color: var(--text);
     /* display: flex; */
     /* flex-direction: column; */
@@ -130,14 +132,16 @@ hr {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background-color: #212121a0;
-  backdrop-filter: blur(20px);
-  border-radius: 15px;
-  box-shadow: #00000070 0 5px 15px;
   display: flex;
   flex-direction: column;
+  background-color: #232323d0;
+  backdrop-filter: saturate(5) contrast(0.7) brightness(0.6) blur(20px);
+  border-radius: 15px;
+  box-shadow: #00000070 0 5px 15px;
+  border: 1.7px solid #ffffff10;
   color: #fff;
   padding: 15px;
+  user-select: none;
 }
 
 #resbox{
@@ -145,16 +149,17 @@ hr {
   align-items: center;
   justify-content: center;
   margin-bottom: 7px;
+  user-select: all;
 }
 #resbox>.dig{
-  font-size: 25px;
+  font-size: 24px;
   /* height: 40px; */
-  width: 30px;
-  background-color: #7f7f7f10;
-  padding: 3px;
-  border-radius: 5px;
+  width: 32px;
+  background-color: #7f7f7f20;
+  padding: 4px 0;
+  border-radius: 6px;
   text-align: center;
-  margin: 0 1px;
+  margin: 0 2px;
 }
 
 

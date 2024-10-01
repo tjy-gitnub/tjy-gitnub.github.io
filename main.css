@@ -62,11 +62,16 @@ p {
 }
 
 hr {
-    width: calc(100% - 20px);
-    background-color: #ffffff30;
+    width: calc(100% - 40px);
+    background-color: #7f7f7f40;
     border: none;
     height: 1px;
     border-radius: 10px;
+}
+
+.chart>hr{
+    
+    margin: 10px 0 0 5px;
 }
 
 /* #hd>svg>g>path{
@@ -102,10 +107,11 @@ hr {
 }
 
 .card {
-    background-color: #212121a0;
-    backdrop-filter: blur(20px);
+    background-color: #232323d0;
+    backdrop-filter: saturate(5) contrast(0.7) brightness(0.7) blur(30px);
     border-radius: 15px;
-    box-shadow: #00000070 0 5px 15px;
+    box-shadow: #00000050 0 5px 14px;
+    border: 1.7px solid #7f7f7f20;
     display: flex;
     flex-direction: column;
 }
@@ -253,6 +259,7 @@ body.light .card{
     max-width: 700px;
     overflow: auto;
     max-height: 800px;
+    padding-bottom: 30px;
 }
 
 
@@ -288,6 +295,7 @@ body.light .card{
 
 #jt>div {
     display: flex;
+    align-items: center;
     padding: 2px 20px;
     min-width: 600px;
 }
@@ -300,7 +308,7 @@ body.light .card{
     background: #7f7f7f50;
     border-radius: 20px;
     height: 8px;
-    margin-top: 9px;
+    /* margin-top: 9px; */
     transition: 200ms;
     flex-grow: 1;
     overflow: hidden;
@@ -308,7 +316,7 @@ body.light .card{
 
 
 #jt>div>div:hover {
-    margin-top: 6px;
+    /* margin-top: 6px; */
     height: 14px;
 }
 
