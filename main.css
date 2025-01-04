@@ -105,27 +105,40 @@ hr {
 #hd>svg {
     margin: -20px 0 -10px;
 }
+body.light #hd>svg {
+    filter: brightness(1.2);
+}
 
 .card {
-    background-color: #232323d0;
-    backdrop-filter: saturate(5) contrast(0.7) brightness(0.7) blur(30px);
-    border-radius: 15px;
-    box-shadow: #00000050 0 5px 14px;
-    border: 1.7px solid #7f7f7f20;
+    background-color: #232323a7;
+    backdrop-filter: saturate(4) contrast(0.8) brightness(0.7) blur(30px);
+    border-radius: 24px;
+    box-shadow: #00000080 0 7px 14px;
+    border: 2px solid #88888830;
     display: flex;
     flex-direction: column;
+    transition: 160ms cubic-bezier(1,0,0,1);
+}
+
+.card:hover {
+    border-radius: 30px;
+    padding: 7px;
+    margin: -7px;
+    filter: saturate(1.2);
 }
 
 body.light .card{
-    background-color: #f4f4f4a0;
+    background-color: #ebe2e0a9;
+    backdrop-filter: saturate(3) contrast(0.8) blur(30px);
+    box-shadow: #00000040 0 7px 14px;
     color: #000;
 }
 
 .card>.tit {
     font-size: 40px;
-    line-height: 1.1;
-    font-weight: 500;
-    margin: 20px 30px;
+    line-height: 1.2;
+    font-weight: 300;
+    margin: 25px 30px;
     text-align: start;
 }
 
@@ -148,20 +161,21 @@ body.light .card{
     width: 100%;
     z-index: 7;
     background-image:
-        radial-gradient(circle at 30% 30%, #197e7430, #00000000 80px),
-        radial-gradient(circle at 70% 60%, #9e751730, #00000000 160px),
-        radial-gradient(circle at 20% 70%, #2b6e4530, #00000000 140px),
+        radial-gradient(circle at 30% 30%, #197e7430, #00000000 20%),
+        radial-gradient(circle at 70% 60%, #9e751730, #00000000 25%),
+        radial-gradient(circle at 20% 70%, #2b6e4530, #00000000 25%),
         radial-gradient(circle at 0 0, #233e53 0 30%, #3a1d2e 70%);
     overflow: hidden;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     color: #f0f0f0;
 }
 
 body.light>#ldb{
-    background-image: radial-gradient(circle at 30% 30%,#32ffea30,#00000000 80px),
-    radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 160px),
-    radial-gradient(circle at 20% 70%,#3da86630,#00000000 140px),
+    background-image: radial-gradient(circle at 30% 30%,#32ffea30,#00000000 20%),
+    radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 25%),
+    radial-gradient(circle at 20% 70%,#3da86630,#00000000 25%),
     radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
     /* color: #000; */
 }
@@ -260,6 +274,7 @@ body.light .card{
     overflow: auto;
     max-height: 800px;
     padding-bottom: 30px;
+    margin-bottom: 0;
 }
 
 
@@ -376,45 +391,56 @@ body.light .card{
 .card.prj{
     width: 50%;
     min-width: 450px;
-    max-width: 700px;
+    max-width: 600px;
 }
 .card.prj>.body{
-    padding: 0 20px 0px 20px;
+    padding: 0 30px 0px 35px;
     width: unset;
     line-height: 1.5;
 }
 
 .card.prj>.body>span{
-    background-color: #4a4a4a;
-    border-radius: 7px;
+    font-family: 'Cascadia Code', monospace;
+    font-weight:300;
+    background: radial-gradient(circle at 30px 40% ,#474747c0 0, #393939d0 50px);
+    border-radius: 9px;
+    text-shadow: #000 0 2px 2px;
     color: #fff;
     font-size: 15px;
-    padding: 3px 7px;
+    padding: 2px 7px;
     display: inline-flex;
     align-items: center;
-    box-shadow: #00000090 0 1px 3px;
-    margin: -15px 0 15px 5px;
+    border: #7f7f7f49 1px solid;
+    /* box-shadow: #00000090 0 1px 3px; */
+    margin: -15px 7px 15px -5px;
     user-select: none;
-
 }
 .card.prj>.body>span>svg{
     fill: #61b8ff;
+    /* fill: none; */
     margin-right: 4px;
+    stroke: #61b8ff;
+    stroke-width: 0.5px;
+}
+.card.prj>.body>span>svg.bi-star{
+    fill: #ffd562;
+    stroke: #ffd562;
 }
 
 .ops{
     display: flex;
     /* flex-direction: column; */
-    padding: 25px 0 20px 0;
+    padding: 20px 0 30px 0;
     width: 100%;
     user-select: none;
+    gap: 5px;
 }
 
 .ops>.a{
     /* width: 100%; */
     padding: 10px 10px;
     margin: 1px;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: 100ms;
     color: var(--text);
     display: flex;
@@ -429,7 +455,7 @@ body.light .card{
 }
 
 .ops>.a:hover{
-    background-color: #7f7f7f40;
+    background-color: #7f7f7f29;
 }
 
 .ops>.a:active{
@@ -437,6 +463,6 @@ body.light .card{
 }
 
 #ft {
-    background-color: #222;
-
+    background-color: #222222e7;
+    backdrop-filter: blur(30px);
 }

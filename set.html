@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星源 | Starry Source</title>
+    <style>
+        html{
+            height: 100%;
+            width: 100%;
+        }
+
+        .a{
+            cursor: pointer;
+        }
+
+        body{
+            display: flex;
+            background-color: #222;
+            position: fixed;
+            width:100%;
+            height:100%;
+            background-image:
+                radial-gradient(circle at 30% 30%, #197e7430, #00000000 20%),
+                radial-gradient(circle at 70% 60%, #9e751730, #00000000 25%),
+                radial-gradient(circle at 20% 70%, #2b6e4530, #00000000 25%),
+                radial-gradient(circle at 0 0, #233e53 0 30%, #3a1d2e 70%);
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        body.light{
+            background-image: radial-gradient(circle at 30% 30%,#32ffea30,#00000000 20%),
+                radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 25%),
+                radial-gradient(circle at 20% 70%,#3da86630,#00000000 25%),
+                radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
+        }
+
+        .dn{
+            display: none !important;
+        }
+
+        .card{
+            transition: 200ms cubic-bezier(1,0,0,1);
+        }
+
+        .card.bg{
+            transform: translateX(20%);
+            opacity: 0;
+        }
+
+        .card.hide{
+            transform: translateX(-20%);
+            opacity: 0;
+        }
+
+        #hello>p{
+            text-align: center;
+            margin: 0;
+            color: #fff;
+        }
+
+        .box{
+            width: calc(100% - 100px);
+            min-width: 120px;
+            max-width: 1000px;
+            height: calc(100% - 120px);
+            min-height: 300px;
+            max-height: 700px;
+            background-color: #17171795;
+            color: #f3f3f3;
+            border-radius: 25px;
+            box-shadow: #00000040 0 10px 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        body.light .box{
+            background-color: #f4f4f4a0;
+            color: #000;
+        }
+
+        .box.s{
+            flex-direction: column;
+        }
+
+        #thml{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 10px 10px 10px 30px;
+            max-width: 70vh;
+            align-items: end;
+        }
+        #thml>.tb{
+            height: 50%;
+            border-radius: 10px;
+            transition: 100ms;
+            padding: 5px;
+            margin: 1px;
+            width: 100%;
+            border: solid 3px transparent;
+        }
+        #thml>.tb:hover{
+            border-color: #2983cc70;
+        }
+        
+        .tb>.bg{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            border-radius: 7px;
+            box-shadow: inset 0 2px 5px #00000020;
+        }
+        .tb>.bg>.bx{
+            border-radius: 12px;
+            box-shadow: #00000040 0 6px 12px;
+            backdrop-filter: blur(5px);
+            width: 50%;
+            height: 70%;
+            max-width: 370px;
+            min-width: 250px;
+        }
+
+        #ing{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 10px 15px 15px 15px;
+            max-width: 500px;
+        }
+
+        #box.s>#ing{
+            max-width: unset;
+            padding: 5px 15px 15px 30px;
+        }
+
+        #lang,#tht{
+            margin: 10px 0 0 30px;
+        }
+
+        #lang>p,#tht>p{
+            margin: 0;
+        }
+
+        .list{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            border-radius: 10px;
+            /* width: 100%; */
+        }
+
+        .list>.a{
+            display: block;
+            /* width: 100%; */
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: 50ms;
+            margin: 1px 0;
+        }
+
+        .list>.a:hover{
+            background-color: #7f7f7f30;
+        }
+
+        .list>.a:active{
+            opacity: 0.6;
+        }
+
+        .list>.a.sel{
+            background-color: #2983cc;
+            color: #eee;
+        }
+
+        .list.sel{
+            background-color: #7f7f7f20;
+        }
+
+        .btn{
+            display: inline-block;
+            background: #7f7f7f20;
+            border-radius: 8px;
+            padding: 9px 12px;
+            transition: 80ms;
+            user-select: none;
+            margin: 2px 5px;
+            width: max-content;
+            height: max-content;
+        }
+
+        .btn:hover{
+            filter: brightness(1.2);
+        }
+
+        .btn:active{
+            opacity: 0.6;
+        }
+
+        .btn.sub{
+            background: #2983cc;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <script src="jq.min.js"></script>
+    <div id="hello" class="card">
+        <p style="font-size: 10vh;">欢迎!</p>
+        <p style="font-size: 7vh;">歡迎!</p>
+        <p>Welcome!</p>
+    </div>
+    <div id="thm" class="card box dn bg">
+        <div id="tht">
+            <p style="font-size: 9vh;">主题</p>
+            <p style="font-size: 6vh;">主題</p>
+            <p>Theme</p>
+        </div>
+        <div id="thml">
+            <div class="dk tb" onclick="tgtheme(false)">
+                <div class="bg" style="
+                background-image:
+                    radial-gradient(circle at 30% 30%, #197e7430, #00000000 20%),
+                    radial-gradient(circle at 70% 60%, #9e751730, #00000000 25%),
+                    radial-gradient(circle at 20% 70%, #2b6e4530, #00000000 25%),
+                    radial-gradient(circle at 0 0, #233e53 0 30%, #3a1d2e 70%);">
+                    <div class="bx" style="background-color: #17171795;"></div>
+                </div>
+            </div>
+            <div class="lt tb" onclick="tgtheme(true)">
+                <div class="bg" style="
+                background-image: radial-gradient(circle at 30% 30%,#32ffea30,#00000000 20%),
+                radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 25%),
+                radial-gradient(circle at 20% 70%,#3da86630,#00000000 25%),
+                radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
+;">
+                    <div class="bx" style="background-color: #f4f4f470;"></div>
+                </div>
+            </div>
+            <a class="a btn sub" style="float: right;" onclick="nxp()">确定/確定/Submit</a>
+        </div>
+    </div>
+    <div id="box" class="card bg dn box">
+        <div id="lang">
+            <p style="font-size: 9vh;">语言</p>
+            <p style="font-size: 6vh;">語言</p>
+            <p>Language</p>
+        </div>
+        <div id="ing">
+            <div>
+                <p style="font-size: 25px; margin-bottom: 10px;">语言 語言 Language</p>
+                <div class="list sel" id="inp-lang">
+                    <a class="a" onclick="cl('zh');$(this).addClass('sel');">现代汉语/現代漢語</a>
+                    <a class="a" onclick="cl('en');$(this).addClass('sel');">English</a>
+                </div>
+            </div>
+            <div id="tyg" style="display: none;">
+                <p style="font-size: 25px; margin-bottom: 10px;" class="tit">字体 字體</p>
+                <div class="list sel" id="inp-fm">
+                    <a class="a" onclick="$('#inp-fm>.a').removeClass('sel');$(this).addClass('sel');fm='hans';
+                $('#sub').text('确定');">简体</a>
+                    <a class="a" onclick="$('#inp-fm>.a').removeClass('sel');$(this).addClass('sel');fm='hant';
+                $('#sub').text('確定');">繁體</a>
+                </div>
+            </div>
+            <div style="flex-grow: 1;display: flex;align-items: end;justify-content: end;">
+            <a class="a btn sub" id="sub" onclick="sub();">确定/確定/Submit</a></div>
+        </div>
+    </div>
+    <script>
+        let lang=-1,fm=-1;
+        function cl(x) {
+            $('#inp-lang>.a').removeClass('sel');
+            lang=x;
+            if(x=='zh'){
+                $('#tyg').show();
+                $('#sub').text('确定/確定');
+            }else if(x=='en'){
+                $('#tyg').hide();
+                $('#inp-fm>.a').removeClass('sel');
+                fm='us';
+                $('#sub').text('Submit');
+            }
+        }
+        function init() {
+            
+            if (window.innerHeight>630) {
+                if(window.innerWidth<window.innerHeight){
+                    $('.box').addClass('s');
+                }else{
+                    $('.box').removeClass('s');
+                }
+            }else{
+                $('.box').removeClass('s');
+            }
+        }
+        window.onresize=init;
+        function sub(){
+            if(lang!=-1 && fm!=-1){
+                let xx='';
+                if($('body').hasClass('light'))xx='?light'
+                if(lang=='zh' && fm=='hans') window.location.href='index.html'+xx;
+                else
+                window.location.href='content-'+lang+'-'+fm+'.html'+xx;
+            }
+        }
+        function tgtheme(b=true) {
+            if(b)$('body').addClass('light');
+            else $('body').removeClass('light');
+        }
+        function nxp() {
+            $('#thm').addClass('hide');
+            setTimeout(() => {
+                $('#box').removeClass('dn');
+                $('#thm').addClass('dn');
+            }, 200);
+            setTimeout(() => {
+                $('#box').removeClass('bg');
+            }, 300);
+        }
+        init();
+        setTimeout(() => {
+            $('#hello').addClass('hide');
+        }, 2500);
+        setTimeout(() => {
+            $('#thm').removeClass('dn');
+            $('#hello').addClass('dn');
+        }, 2700);
+        setTimeout(() => {
+            $('#thm').removeClass('bg');
+        }, 2800);
+
+
+    </script>
+</body>
+</html>
