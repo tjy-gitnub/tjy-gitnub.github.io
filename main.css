@@ -92,18 +92,19 @@ hr {
 } */
 
 #hd {
-    width: 200px;
+    width: 140px;
     position: fixed;
-    height: 300px;
-    left: calc(50% - 100px);
-    top: calc(50% - 150px);
+    height: 340px;
+    left: calc(50% - 70px);
+    top: calc(50% - 170px);
     overflow: hidden;
     display: flex;
     transition: 200ms;
 }
 
 #hd>svg {
-    margin: -20px 0 -10px;
+    margin-right: 15px;
+    /* margin: -20px 0 -10px; */
 }
 body.light #hd>svg {
     filter: brightness(1.2);
