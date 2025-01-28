@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#bgCanvas {
+    z-index: 1;
+}
+
+#fireworkCanvas {
+    z-index: 2;
+}
+
+#countdown {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#timer {
+    font-family: "SimSun", serif;
+    font-size: 4em;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    margin-bottom: 30px;
+}
+
+#blessing {
+    /* font-family: "KaiTi", "STKaiti", serif; */
+    font-size: 1.5em;
+    line-height: 1.8;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    opacity: 0.9;
+}
+
+#border-decoration {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    /* border: 2px solid rgba(255, 215, 0, 0.3); */
+    z-index: 3;
+    padding: 20px;
+}
+
+/* .corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid gold;
+}
+
+.top-left {
+    top: -2px;
+    left: -2px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.top-right {
+    top: -2px;
+    right: -2px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.bottom-left {
+    bottom: -2px;
+    left: -2px;
+    border-right: none;
+    border-top: none;
+}
+
+.bottom-right {
+    bottom: -2px;
+    right: -2px;
+    border-left: none;
+    border-top: none;
+} */
