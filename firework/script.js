@@ -63,7 +63,7 @@ function drawBackground() {
 function numberToChinese(num) {
     const units = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖', '拾'];
     if (num <= 10) return units[num];
-    return units[Math.floor(num/10)] + (num%10 === 0 ? '拾' : '拾' + units[num%10]);
+    // return units[Math.floor(num/10)] + (num%10 === 0 ? '拾' : '拾' + units[num%10]);
 }
 
 // 烟花类
@@ -76,7 +76,7 @@ class Firework {
         this.x = Math.random() * fireworkCanvas.width;
         this.y = fireworkCanvas.height;
         this.targetY = Math.random() * fireworkCanvas.height * 0.6; // 调整爆炸高度
-        this.speed = 4 + Math.random() * 4; // 增加上升速度
+        this.speed = 4 + Math.random() * 3; // 增加上升速度
         this.particles = [];
         this.hue = Math.random() * 360;
         this.brightness = 50 + Math.random() * 20; // 添加亮度变量
@@ -85,8 +85,8 @@ class Firework {
     explode() {
         for (let i = 0; i < 150; i++) { // 增加粒子数量
             const angle = Math.random() * Math.PI * 2;
-            const speed = 1 + Math.random() * 8; // 增加粒子速度范围
-            const size = 1 + Math.random() * 2.5; // 添加粒子大小变化
+            const speed = 1 + Math.random() * 7; // 增加粒子速度范围
+            const size = 1 + Math.random() * 2; // 添加粒子大小变化
             this.particles.push({
                 x: this.x,
                 y: this.y,
@@ -94,7 +94,8 @@ class Firework {
                 vy: Math.sin(angle) * speed,
                 size: size,
                 alpha: 1,
-                color: `hsla(${this.hue}, 100%, ${this.brightness}%` // 使用亮度变量
+                color: `hsla(${this.hue}, 100%, ${this.brightness}%`,
+                trail: [] // 添加尾巴数组
             });
         }
     }
@@ -108,6 +109,9 @@ class Firework {
             this.explode();
         }
         this.particles = this.particles.filter(p => {
+            p.trail.push({ x: p.x, y: p.y, alpha: p.alpha }); // 记录尾巴位置
+            if (p.trail.length > 7) p.trail.shift(); // 限制尾巴长度
+
             p.x += p.vx;
             p.y += p.vy;
             p.vy += 0.08; // 降低重力影响
@@ -125,6 +129,12 @@ class Firework {
             fwCtx.fill();
         }
         this.particles.forEach(p => {
+            p.trail.forEach((t, i) => { // 绘制尾巴
+                fwCtx.fillStyle = `${p.color}, ${t.alpha * (i / p.trail.length)})`;
+                fwCtx.beginPath();
+                fwCtx.arc(t.x, t.y, p.size * (i / p.trail.length), 0, Math.PI * 2);
+                fwCtx.fill();
+            });
             fwCtx.fillStyle = `${p.color}, ${p.alpha})`;
             fwCtx.beginPath();
             fwCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
@@ -158,7 +168,7 @@ function animate() {
     }
 
     // 烟花效果
-    if (isNewYear && Math.random() < 0.07) { // 提高烟花出现频率
+    if (isNewYear && Math.random() < 0.04) { // 提高烟花出现频率
         fireworks.push(new Firework());
     }
 
