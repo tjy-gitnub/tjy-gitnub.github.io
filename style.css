@@ -1,0 +1,543 @@
+body {
+    /* padding: 0 0 500px; */
+    padding: 0;
+    margin: 0;
+    background: url(bg.jpg) center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #222;
+    scroll-behavior: smooth;
+    --text: #f2f2f2;
+    --bgt: #222222d0;
+    overflow: hidden;
+}
+
+body.light {
+    background: url(bgl.jpg) center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #eee;
+    --text: #000;
+    --bgt: #eeeeeeb0;
+}
+
+.a {
+    text-decoration: none !important;
+    cursor: pointer;
+    user-select: none;
+}
+
+a.jump {
+    color: #2983cc;
+}
+
+a.jump:hover {
+    color: #999;
+}
+
+a.jump:active {
+    color: #666;
+}
+
+p {
+    margin: unset;
+}
+
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: #7f7f7f30;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7f7f7f70;
+    background-clip: padding-box;
+    border: 6px solid transparent;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border: 4px solid transparent;
+}
+
+hr {
+    width: calc(100% - 40px);
+    background-color: #7f7f7f40;
+    border: none;
+    height: 1px;
+    border-radius: 10px;
+}
+
+.chart>hr{
+    
+    margin: 10px 0 0 5px;
+}
+
+/* #hd>svg>g>path{
+    stroke:#fff;
+    stroke-width: 10;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    fill:none;
+    stroke-miterlimit:10;
+}
+
+#hd{
+    width: 140px;
+    position: fixed;
+    height: 300px;
+    left: calc(50% - 70px);
+    top: calc(50% - 150px);
+} */
+
+.card {
+    background-color: #232323a7;
+    backdrop-filter: saturate(4) contrast(1.2) brightness(0.7) blur(40px);
+    border-radius: 24px;
+    box-shadow: #00000080 0 7px 14px;
+    border: 2px solid #88888830;
+    display: flex;
+    flex-direction: column;
+    transition: 160ms cubic-bezier(1,0,0,1);
+    padding: 7px;
+}
+
+/* .card:hover {
+    border-radius: 30px;
+    padding: 7px;
+    margin: -7px;
+    filter: saturate(1.2);
+} */
+
+body.light .card{
+    background-color: #ebe2e0a7;
+    backdrop-filter: saturate(4) contrast(1.2) blur(40px);
+    box-shadow: #00000020 0 7px 14px;
+    color: #000;
+}
+
+.card>.tit {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 300;
+    margin: 25px 30px;
+    text-align: start;
+}
+
+.card>.tit.center {
+    text-align: center;
+}
+
+.card>.body {
+    /* padding: 20px 30px; */
+    width: 100%;
+    flex-grow: 1;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    background-color: #61ccff;
+    color: #000;
+    line-height: 1.2;
+    padding: 9px 15px 8px 15px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    border: 2px solid #99999934;
+    border-bottom-color: #4a4a4a40;
+    transition: 100ms;
+}
+button:hover{
+    filter: brightness(1.1);
+}
+button:active{
+    opacity: 0.6;
+}
+
+#ldb {
+    transition: 700ms, transform 500ms cubic-bezier(0.6, 0.02, 0.9, 0.7);
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 7;
+    background-image:
+    radial-gradient(circle at 50% 40%, transparent 0 50%, #00000020),
+        radial-gradient(circle at 30% 30%, #197e7430, #00000000 20%),
+        radial-gradient(circle at 70% 60%, #9e751730, #00000000 25%),
+        radial-gradient(circle at 20% 70%, #2b6e4530, #00000000 25%),
+        radial-gradient(circle at 0 0, #233e53 0 30%, #3a1d2e 70%);
+    background-size: cover;
+    background-position: center;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #f0f0f0;
+    scroll-behavior: smooth;
+}
+
+#ldb.hide{
+    transform: translateY(-100%);
+    border-bottom-left-radius: 45vw;
+    border-bottom-right-radius: 45vw;
+}
+
+body.light>#ldb{
+    background-image: 
+    radial-gradient(circle at 50% 40%, transparent 0 50%, #ffffff20),
+    radial-gradient(circle at 30% 30%,#32ffea30,#00000000 20%),
+    radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 25%),
+    radial-gradient(circle at 20% 70%,#3da86630,#00000000 25%),
+    radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
+    /* color: #000; */
+}
+body>#ldb>.bg{
+    /* background-image: 
+    url(./bg.svg); */
+    /* background-position: center center;
+    background-size: cover; */
+    min-height: 400%;
+    width: 100%;
+    /* color: #000; */
+}
+body.light>#ldb>.stscbg *{
+    fill: #00000090 !important;
+}
+#ldb>.stscbg *{
+    fill: #ffffff90;
+}
+body>#ldb>svg{
+    position: fixed;
+    margin-bottom: 50px;
+}
+body>#ldb>.stsc{
+    /* filter: brightness(1.2); */
+    /* opacity: 0.7; */
+    z-index: 8;
+}
+
+#ldb>.stsc{
+    --r: 0px;
+    mask-image: radial-gradient(circle at 50% 110%, white var(--r), transparent var(--r) 100%);
+}
+
+#ldb>.ld{
+    position: fixed;
+    bottom: 20px;
+    transition: 100ms, opacity 200ms 400ms, transform 1s cubic-bezier(1, 0,2, 0.2, 1);
+}
+
+#ldb:not(.sc)>.ld{
+    opacity: 0;
+    transform: translateY(25px);
+    scale: 1.5 0.8;
+}
+
+#ldb:not(.loaded)>.ld{
+    background: transparent;
+    color: var(--text);
+    border-color: transparent;
+}
+#ldb.loaded>.ld{
+    
+    font-size: 17px;
+}
+
+#ldb:not(.loaded)>.ld:hover,
+#ldb:not(.loaded)>.ld:active{
+    opacity: 1;
+    filter: none;
+    border-color: var(--text);
+}
+
+body.light>#ldb .lay{
+    color: #000;
+}
+
+.shine {
+    --speed: 1;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(110deg, var(--color) 0 40%, var(--colorshine) 50% 50%, var(--color) 60%);
+    background-size: 200% 100%;
+    background-position: calc(var(--scroll) * var(--speed)) 50%;
+}
+
+
+#ldb>.lay {
+    height: 100%;
+    padding: 0 20px;
+    overflow-y: auto;
+    align-items: stretch;
+    display: none;
+    opacity: 0;
+    width: max-content;
+    transition: opacity 485ms;
+}
+
+.lay{
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 50vh;
+    flex-direction: column;
+    color: #f0f0f0;
+}
+
+body.light .card{
+    color: #000;
+}
+
+#ldb>.lay.show0 {
+    display: flex;
+}
+
+#ldb>.lay.show {
+    opacity: 1;
+}
+
+#inf {
+    /* margin: 0 200px 0 0; */
+}
+
+#inf>.card {
+    height: calc(100% - 160px);
+    width: calc(100% - 200px);
+    max-width: 700px;
+    overflow: auto;
+    max-height: 800px;
+    padding-bottom: 30px;
+    margin-bottom: 0;
+}
+
+
+#inf>.card>.chart {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    margin: 0 0 0 50px;
+    width: calc(100% - 50px);
+}
+
+#inf>.card>.chart>div {
+    display: flex;
+    margin-top: 10px;
+}
+
+#inf>.card>.chart>div>p:first-child {
+    min-width: 100px;
+}
+
+#jt {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+    overflow: hidden;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* #jt>div>p{
+    align-items: center;
+} */
+
+#jt>div {
+    display: flex;
+    align-items: center;
+    padding: 2px 20px;
+    min-width: 600px;
+}
+
+#jt>div>p {
+    width: 100px;
+}
+
+#jt>div>div {
+    background: #7f7f7f50;
+    border-radius: 20px;
+    height: 8px;
+    /* margin-top: 9px; */
+    transition: 200ms;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+
+#jt>div>div:hover {
+    /* margin-top: 6px; */
+    height: 14px;
+}
+
+
+.highlight.width:not(.show) {
+    width: 0 !important;
+}
+
+.highlight.width {
+    transition: 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+#hab {
+    width: calc(100% - 200px);
+    min-width: 400px;
+    max-width: 800px;
+    background-color: #33333330;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* column-count: auto; */
+    /* column-width: 100px; */
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px) brightness(1.2);
+}
+
+#hab>.cd {
+    /* margin: 5px; */
+    background-color: #00000050;
+    width: 100%;
+    min-height: 80px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+#hab>.cd:hover>svg {
+    transform: scale(40%);
+}
+
+#hab>.cd>svg {
+    height: 100%;
+    width: max-content;
+    transform: scale(35%);
+    transition: 200ms;
+}
+
+#hab>.cd>span {
+    flex-grow: 1;
+    font-size: 21px;
+}
+
+.card.prj{
+    width: 50%;
+    min-width: 450px;
+    max-width: 600px;
+}
+.card.prj>.body{
+    padding: 0 30px 0px 35px;
+    width: unset;
+    line-height: 1.5;
+}
+
+.card.prj>.body>span{
+    font-family: 'Cascadia Code', monospace;
+    font-weight:300;
+    background: radial-gradient(circle at 30px 40% ,#474747c0 0, #393939d0 50px);
+    border-radius: 9px;
+    text-shadow: #000 0 2px 2px;
+    color: #fff;
+    font-size: 15px;
+    padding: 2px 7px;
+    display: inline-flex;
+    align-items: center;
+    border: #7f7f7f49 1px solid;
+    /* box-shadow: #00000090 0 1px 3px; */
+    margin: -15px 7px 15px -5px;
+    user-select: none;
+}
+.card.prj>.body>span>svg{
+    fill: #61b8ff;
+    /* fill: none; */
+    margin-right: 4px;
+    stroke: #61b8ff;
+    stroke-width: 0.5px;
+}
+.card.prj>.body>span>svg.bi-star{
+    fill: #ffd562;
+    stroke: #ffd562;
+}
+
+.card.prj.prjlist>.tit{
+    font-size: 25px;
+}
+.card.prj.prjlist .ops>.a>svg{
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-right: 6px;
+}
+.card.prj.prjlist .ops>.a{
+    flex-direction: row;
+}
+.card.prj.prjlist>.body>span{
+    margin: -8px 7px 12px -5px;
+}
+.card.prj.prjlist>hr{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.ops{
+    display: flex;
+    /* flex-direction: column; */
+    padding: 20px 0 30px 0;
+    width: 100%;
+    user-select: none;
+    gap: 5px;
+}
+
+.ops>.a{
+    /* width: 100%; */
+    padding: 10px 10px;
+    margin: 1px;
+    border-radius: 8px;
+    transition: 100ms;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.ops>.a>svg{
+    height: 25px;
+    width: max-content;
+    margin-bottom: 5px;
+}
+
+.ops>.a:hover{
+    background-color: #7f7f7f29;
+}
+
+.ops>.a:active{
+    opacity: 0.6;
+}
+
+#ft {
+    background-color: var(--bgt);
+    backdrop-filter: blur(30px);
+    color: var(--text);
+    height: calc(100vh + 50px);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: #00000040 0 -10px 20px;
+    border-top: 3px solid #77777760;
+}
+
+body.light #ft{
+    box-shadow: #00000017 0 -10px 20px;
+}
