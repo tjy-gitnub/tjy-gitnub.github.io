@@ -1,3 +1,14 @@
+html{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    word-break:normal;
+}
+
+.card>.tit{ 
+   word-break: keep-all;
+}
+
 body {
     /* padding: 0 0 500px; */
     padding: 0;
@@ -10,6 +21,8 @@ body {
     --text: #f2f2f2;
     --bgt: #222222d0;
     overflow: hidden;
+    height: 100vh;
+    width: 100vw;
 }
 
 body.light {
@@ -44,7 +57,7 @@ p {
 }
 
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 14px;
 }
 
@@ -61,7 +74,7 @@ p {
 
 ::-webkit-scrollbar-thumb:hover {
     border: 4px solid transparent;
-}
+} */
 
 hr {
     width: calc(100% - 40px);
@@ -275,16 +288,6 @@ body.light>#ldb .lay{
 }
 
 
-#ldb>.lay {
-    height: 100%;
-    padding: 0 20px;
-    overflow-y: auto;
-    align-items: stretch;
-    display: none;
-    opacity: 0;
-    width: max-content;
-    transition: opacity 485ms;
-}
 
 .lay{
     height: 100vh;
@@ -294,6 +297,7 @@ body.light>#ldb .lay{
     margin-top: 50vh;
     flex-direction: column;
     color: #f0f0f0;
+    width: 100%;
 }
 
 body.light .card{
@@ -333,11 +337,11 @@ body.light .card{
 
 #inf>.card>.chart>div {
     display: flex;
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
 #inf>.card>.chart>div>p:first-child {
-    min-width: 100px;
+    min-width: 150px;
 }
 
 #jt {
@@ -357,7 +361,7 @@ body.light .card{
     display: flex;
     align-items: center;
     padding: 2px 20px;
-    min-width: 600px;
+    width: 600px;
 }
 
 #jt>div>p {
@@ -439,7 +443,7 @@ body.light .card{
     max-width: 600px;
 }
 .card.prj>.body{
-    padding: 0 30px 0px 35px;
+    padding: 0 30px 0px 30px;
     width: unset;
     line-height: 1.5;
 }
@@ -540,4 +544,50 @@ body.light .card{
 
 body.light #ft{
     box-shadow: #00000017 0 -10px 20px;
+}
+
+@media screen and (max-width: 768px) {
+    /* Body adjustments for mobile */
+    .lay.hd{
+        width: 100%;
+    }
+
+    html,body {
+        padding: 0;
+        margin: 0;
+    }
+
+    html{
+        overflow-x: hidden !important;
+    }
+
+    #jt>div{
+        width: unset;
+        margin-right: 15px;
+    }
+
+    /* Card adjustments */
+    .card {
+        width: 100% !important;
+        border-radius: 0;
+        margin: 0;
+        border-left: 0;
+        border-right: 0;
+        min-width: 0 !important;
+    }
+
+    .vtxt{
+        writing-mode: vertical-rl;
+    }
+
+    #hab{
+        min-width: 0;
+        width: calc(100% - 50px);
+    }
+    
+    .card.prj>.body{
+        padding: 0 25px 0px 25px;
+        width: unset;
+        line-height: 1.5;
+    }
 }

@@ -11,7 +11,7 @@ function scLdb() {
   }
 }
 
-function scHtml() {
+function scBody() {
   // Keep the original HTML scrolling effects (for elements outside #hd)
   let t = $(window).scrollTop();
   
@@ -46,12 +46,12 @@ let g_percent = $(".shine");
 
 $("#ldb").on("scroll", scLdb);
 
-$(window).on("scroll", scHtml);
+$('body').on("scroll", scBody);
 
 window.onresize = () => {
   init();
   scLdb();
-  scHtml();
+  scBody();
 };
 
 // Reset scroll position on #ldb
@@ -66,4 +66,4 @@ if (location.search == "?light") {
   tgtheme();
 }
 
-$("html")[0].scroll(0, 0);
+$("body")[0].scroll(0, 0);
