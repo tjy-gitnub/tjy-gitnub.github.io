@@ -159,8 +159,9 @@ button{
     background-color: #61ccff;
     color: #000;
     line-height: 1.2;
-    padding: 9px 15px 8px 15px;
-    border-radius: 8px;
+    padding: 10px 20px 9px 20px;
+    /* border-radius: 8px; */
+    border-radius: 100px;
     outline: none;
     border: none;
     font-size: 16px;
@@ -196,7 +197,7 @@ button:active{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #f0f0f0;
+    color: #fff;
     scroll-behavior: smooth;
 }
 
@@ -213,7 +214,7 @@ body.light>#ldb{
     radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 25%),
     radial-gradient(circle at 20% 70%,#3da86630,#00000000 25%),
     radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
-    /* color: #000; */
+    color: #000;
 }
 body>#ldb>.bg{
     /* background-image: 
@@ -276,6 +277,53 @@ body>#ldb>.stsc{
 
 body.light>#ldb .lay{
     color: #000;
+}
+
+#maincir{
+    width: var(--cird);
+    height: var(--cird);
+    position: fixed;
+    display: block;
+    left: var(--cirl);
+    top: var(--cirt);
+    transform-origin: 50% 100%;
+    transform: scale(0);
+    background-color: #222;
+    transition: 700ms ease-out;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+#maincir.expend{
+    transform: none;
+}
+
+body>.lay.first{
+    margin: 0;
+    transition: background-color 1.2s 2.2s;
+    background-color: #222;
+}
+body>.lay.first>*{
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+body.show>.lay.first{
+    background-color: transparent;
+}
+
+body.show>.lay.first>*{
+    opacity: 1;
+}
+
+body.show{
+    animation: ovfy 0s 2.5s forwards;
+}
+
+@keyframes ovfy {
+    to{
+        overflow-y: scroll;
+    }
 }
 
 .shine {

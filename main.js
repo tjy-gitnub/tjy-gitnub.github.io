@@ -36,7 +36,11 @@ function scBody() {
 function init() {
   // Compute the height of #ldb for the fade effect
   ph = $("#ldb").innerHeight();
+  let cird=($("#ldb").innerHeight()**2+$("#ldb").innerWidth()**2)**0.5+20;
   $(":root").css("--ph", `${ph}px`);
+  $(":root").css("--cird", `${cird}px`);
+  $(":root").css("--cirl", `${-(cird-$("#ldb").innerWidth())/2}px`);
+  $(":root").css("--cirt", `${-(cird-ph)/2}px`);
 }
 
 
@@ -67,3 +71,7 @@ if (location.search == "?light") {
 }
 
 $("body")[0].scroll(0, 0);
+
+// $('#ldb').hide();
+// $('#maincir').hide();
+// $('body').addClass('show');
