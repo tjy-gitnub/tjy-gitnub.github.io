@@ -9,15 +9,15 @@
 <body>
     <script src="jq.min.js"></script>
     <div class="lay" style="margin-top: 0;user-select: none;">
-        <div class="card">
+        <div class="card rotate">
             <div class="body">
                 <p class="tit">你好！</p>
-                <p>请完成下面的题目，网站将会根据你的选项排列生成 QQ 号码。<br>注意！所得的号码不一定是正确的。当且仅当答对所有题目，号码才是真实的。<br><br>共有 10 题。不限时间，过程中允许查阅书籍，允许向他人求助，<br>允许使用手机、电脑、计算器等工具。<br><br>题目主要考察教育程度、基本常识。<br><br>下滑以开始。</p>
+                <p>请完成下面的题目，网站将会根据你的选项排列生成 QQ 号码。<br>注意！所得的号码不一定是正确的。当且仅当答对所有题目，号码才是真实的。<br><br>共有 10 题。不限时间，过程中允许查阅书籍，允许向他人求助，<br>允许使用手机、电脑、计算器等工具。<br><br>题目主要考察教育程度、基本常识。<br><br>向下滑以开始。</p>
             </div>
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第一题</p>
                 <p>「万里绿草风东至，千秋黄叶雁南___。」填入汉字，使对仗工整。</p>
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第二题</p>
                 <p>二次函数 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span
@@ -90,7 +90,7 @@
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第三题</p>
                 <p>英语中 ies 与下面哪个单词相关</p>
@@ -104,7 +104,7 @@
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第四题</p>
                 <p>你对电脑操作系统更新的看法是</p>
@@ -118,7 +118,7 @@
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第五题</p>
                 <p>傅里叶定律的内容是</p>
@@ -132,7 +132,7 @@
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第六题</p>
                 <p>以下哪种是中文书写的不标准方式</p>
@@ -146,7 +146,7 @@
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第七题</p>
                 <p>以下哪个是帝国主义势力</p>
@@ -160,7 +160,7 @@
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第八题</p>
                 <p>小明站在一个平面镜前，向左走一步。他会看到镜子里的小明</p>
@@ -174,7 +174,7 @@
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第九题</p>
                 <p>孙中山先生是</p>
@@ -188,7 +188,7 @@
         </div>
     </div>
     <div class="lay">
-        <div class="card">
+        <div class="card rotate">
             <div class="body" >
                 <p class="tit">第十题</p>
                 <p>计算 <span class="katex"><span class="katex-mathml"></span><span aria-hidden="true" class="katex-html"><span
@@ -228,7 +228,7 @@
             </div>
         </div>
     </div>
-    <div id="result">
+    <div id="result" class="card rotate">
         <p style="font-size: 22px;margin-bottom: 10px;">对应的结果</p>
         <div id="resbox">
 
@@ -241,17 +241,17 @@
     
     <script>
         let pws=['?','?','?','?','?','?','?','?','?','?'];
+        let ret='';
+        for (const el of pws) {
+            ret+=`<span class='dig'><span>${el}</span></span>`;
+        }
+        $('#resbox').html(ret);
 
-        function pw(p='1',v='?') {
-            let ret='';
+        function pw(p,v) {
             pws[parseInt(p)-1]=v;
-            for (const el of pws) {
-                ret+=`<span class='dig'>${el}</span>`;
-            }
-            $('#resbox').html(ret);
+            $('#resbox>.dig:nth-child('+p+')').html(`<span>${v}</span>`);
         }
 
-        pw();
         $('.s').click(function(){
             $(this).parent().children().removeClass('chk');
             $(this).addClass('chk');
