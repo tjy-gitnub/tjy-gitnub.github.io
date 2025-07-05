@@ -98,6 +98,7 @@ hr {
     flex-direction: column;
     transition: 160ms cubic-bezier(1,0,0,1);
     padding: 7px;
+    min-width: 300px;
 }
 
 
@@ -202,16 +203,21 @@ hr {
   color: var(--text);
   padding: 17px 20px;
   user-select: none;
+  transition: 100ms
 }
 
-#resbox{
+#result.hide{
+  transform: translateX(114%);
+}
+
+.resbox{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 7px;
   user-select: all;
 }
-#resbox>.dig{
+.resbox>.dig{
   font-size: 24px;
   /* height: 40px; */
   width: 32px;
@@ -223,7 +229,7 @@ hr {
   overflow: hidden;
 }
 
-#resbox>.dig>span{
+.resbox>.dig>span{
   display: block;
   animation: showdig 150ms ease-out;
   transition: 200ms ;
@@ -437,6 +443,10 @@ hr {
     width: 100%;
   }
 
+  .katex .frac-line {
+    display: none;
+  }
+
   .katex .thinbox {
     display: inline-flex;
     flex-direction: row;
@@ -452,13 +462,13 @@ hr {
     text-align: center;
   }
 
-  .katex .mfrac .frac-line {
+  .katex .mfrac .times-dot {
     display: inline-block;
     width: 100%;
     border-bottom-style: solid;
   }
 
-  .katex .mfrac .frac-line,
+  .katex .mfrac .times-dot,
   .katex .overline .overline-line,
   .katex .underline .underline-line,
   .katex .hline,
@@ -499,6 +509,10 @@ hr {
     left: 0;
   }
 
+  .katex .true-num{
+    display: none;
+  }
+
   .katex .clap>.inner>span {
     margin-left: -50%;
     margin-right: 50%;
@@ -524,7 +538,7 @@ hr {
     border-bottom-style: dashed;
   }
 
-  .katex .sqrt>.root {
+  .katex .pow>.root {
     /* These values are taken from the definition of `\r@@t`,
            `\mkern 5mu` and `\mkern -10mu`. */
     margin-left: 0.27777778em;
@@ -1422,3 +1436,7 @@ hr {
     text-align: left;
     padding-left: 2em;
   } 
+
+  a{
+    color: #59eb15;
+  }
