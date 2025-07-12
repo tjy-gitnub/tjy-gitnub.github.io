@@ -13,7 +13,7 @@ body {
     /* padding: 0 0 500px; */
     padding: 0;
     margin: 0;
-    background: url(bg.jpg) center;
+    background: url(bgd.jpg) center;
     background-attachment: fixed;
     background-size: cover;
     background-color: #222;
@@ -269,15 +269,6 @@ body.light>#ldb{
     radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
     color: #000;
 }
-body>#ldb>.bg{
-    /* background-image: 
-    url(./bg.svg); */
-    /* background-position: center center;
-    background-size: cover; */
-    min-height: 400%;
-    width: 100%;
-    /* color: #000; */
-}
 body.light>#ldb>.stscbg *{
     fill: #00000090 !important;
 }
@@ -308,12 +299,18 @@ body>#ldb>.stsc{
     color: var(--text);
     border-color: transparent;
     font-size: 17px;
+    background: var(--bgt);
+    box-shadow: 0 0 5px 2px var(--bgt);
+    padding: 13px 22px;
+    
+    --arbutus-border-radius-accent: 100px;
+    --accent-border-width: 4px;
 }
 
 #ldb:not(.sc)>.ld{
     opacity: 0;
-    transform: translateY(25px);
-    scale: 1.5 0.8;
+    transform: translateY(20px);
+    scale: 1.4 1.5;
 }
 
 #ldb.loaded>.ld{
@@ -372,6 +369,28 @@ l>svg>* {
 l>svg {
     background-color: #00000000;
     border-radius: 100px;
+}
+
+
+body>#ldb>.bg{
+    /* background-image: 
+    url(./bg.svg); */
+    /* background-position: center center;
+    background-size: cover; */
+    min-height: 400%;
+    width: 100%;
+    /* color: #000; */
+}
+
+#ldb> #star-canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    display: block;
 }
 
 #maincir{
@@ -688,6 +707,45 @@ body.light .card{
 
 body.light #ft{
     box-shadow: #00000017 0 -10px 20px;
+}
+
+#tgtheme{
+    background: #ffffff30;
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10;
+    
+    --c1: #1cd9ff;
+    --c2: #8a84ff;
+    --c3: #f260ff;
+    --arbutus-border-radius-accent: 50%;
+    --accent-border-width: 4px;
+}
+
+body.light #tgtheme{
+    background: #ffffff80;
+}
+
+#tgtheme>svg{
+    height: 1.8em;
+    width: 1.8em;
+    transition: 100ms;
+}
+
+#tgtheme:hover>svg{
+    transform: scale(1.14);
+}
+
+#tgtheme:active>svg{
+    transform: scale(1);
+    opacity: 0.6;
 }
 
 @media screen and (max-width: 768px) {

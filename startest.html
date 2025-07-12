@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>星空后退效果</title>
+  <style>
+    html, body {
+      height: 200%;
+      margin: 0;
+      padding: 0;
+      overflow-y: scroll;
+    }
+    body {
+      min-height: 200vh;
+      background: #000;
+    }
+    #star-bg {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 0 0, #233e53 0 30%, #3a1d2e 70%);
+    }
+    #star-canvas {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="star-bg"></div>
+  <canvas id="star-canvas"></canvas>
+  <script>
+    const canvas = document.getElementById('star-canvas');
+    const ctx = canvas.getContext('2d');
+    let w = window.innerWidth, h = window.innerHeight;
+    canvas.width = w;
+    canvas.height = h;
+
+    // 星空参数
+    const STAR_DENSITY = 0.00035;
+    let STAR_NUM = Math.floor(w * h * STAR_DENSITY);
+    const STAR_COLORS = ['#fff', '#ffd700', '#87ceeb', '#ff69b4', '#00ffea', '#ffa500'];
+    const stars = [];
+    const center = { x: w / 2, y: h / 2 };
+
+    // 空间参数，随屏幕自适应
+    function getFov() {
+      return Math.min(w, h) * 1.1;
+    }
+    function getStarSize() {
+      return Math.max(1.2, Math.min(w, h) / 900 * 2.2);
+    }
+    function getWanderRadius() {
+      return Math.max(0.8, Math.min(w, h) / 900 * 2.5);
+    }
+    function getFlickerSpeed() {
+      return Math.max(0.5, Math.min(w, h) / 900 * 1.2);
+    }
+    const Z_NEAR = 0.2;
+    const Z_FAR = 1.0;
+    const Z_RANGE = Z_FAR - Z_NEAR;
+
+    // 星星空间分布
+    function randomStar() {
+      const theta = Math.random() * 2 * Math.PI;
+      const radius = Math.random() * 0.5 + 0.2;
+      const z0 = Math.random() * Z_RANGE + Z_NEAR; // 初始z0
+      const size = getStarSize() * (Math.random() * 1.2 + 0.7);
+      const color = STAR_COLORS[Math.floor(Math.random() * STAR_COLORS.length)];
+      const flickerSpeed = getFlickerSpeed() * (Math.random() * 1.2 + 0.7);
+      const wanderPhase = Math.random() * Math.PI * 2;
+      return {
+        theta,
+        radius,
+        z0,
+        size,
+        color,
+        flickerSpeed,
+        flickerPhase: Math.random() * Math.PI * 2,
+        wanderPhase,
+        wanderSpeed: Math.random() * 0.5 + 0.15,
+        wanderRadius: getWanderRadius() * (Math.random() * 1.1 + 0.5)
+      };
+    }
+
+    function initStars() {
+      stars.length = 0;
+      STAR_NUM = Math.floor(w * h * STAR_DENSITY);
+      for (let i = 0; i < STAR_NUM; i++) {
+        stars.push(randomStar());
+      }
+    }
+    initStars();
+
+    // 监听窗口变化
+    window.addEventListener('resize', () => {
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = w;
+      canvas.height = h;
+      center.x = w / 2;
+      center.y = h / 2;
+      initStars();
+    });
+
+    // 动画渲染
+    let lastScrollY = window.scrollY || window.pageYOffset;
+    function render() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const time = performance.now() * 0.002;
+      // 用累计滚动距离决定z轴偏移
+      const scrollSum = scrollY;
+      drawStars(time, scrollSum);
+      lastScrollY = scrollY;
+      requestAnimationFrame(render);
+    }
+
+    // 绘制星星
+    function drawStars(time, scrollSum) {
+      ctx.clearRect(0, 0, w, h);
+      // 背景已由div实现，无需再绘制
+
+      // 每像素滚动对应z轴推进
+      const zRangePerPx = Z_RANGE / h;
+
+      for (const star of stars) {
+        // 环形映射z，保证无论scrollSum多少都能正常分布
+        let z = star.z0 + scrollSum * zRangePerPx;
+        // 环形流动
+        z = ((z - Z_NEAR) % Z_RANGE + Z_RANGE) % Z_RANGE + Z_NEAR;
+
+        // 真实空间投影到屏幕
+        const FOV = getFov();
+        const planeR = star.radius * FOV;
+        const wander = star.wanderRadius * Math.sin(time * star.wanderSpeed + star.wanderPhase);
+        const proj = FOV / z;
+        const x = center.x + (planeR + wander) * Math.cos(star.theta) * proj / FOV;
+        const y = center.y + (planeR + wander) * Math.sin(star.theta) * proj / FOV;
+
+        // 近大远小
+        const size = Math.max(0.5, star.size * proj / FOV);
+
+        // 闪烁
+        const flicker = 0.7 + 0.3 * Math.sin(time * star.flickerSpeed + star.flickerPhase);
+
+        // 中心淡化区域缩小
+        let fade = 1;
+        const fadeRadius = Math.min(w, h) * 0.09;
+        const distToCenter = Math.sqrt((x - center.x) ** 2 + (y - center.y) ** 2);
+        if (distToCenter < fadeRadius) {
+          fade = Math.max(0, distToCenter / fadeRadius);
+        }
+
+        ctx.save();
+        ctx.globalAlpha = fade * flicker;
+        ctx.beginPath();
+        ctx.arc(x, y, Math.abs(size * flicker), 0, 2 * Math.PI);
+        ctx.fillStyle = star.color;
+        ctx.shadowColor = star.color;
+        ctx.shadowBlur = 8 * flicker;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>
