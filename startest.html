@@ -1,179 +1,146 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>星空后退效果</title>
+  <title>動態浮動祥云背景</title>
   <style>
     html, body {
-      height: 200%;
       margin: 0;
       padding: 0;
-      overflow-y: scroll;
-    }
-    body {
-      min-height: 200vh;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
       background: #000;
     }
-    #star-bg {
+    canvas {
+      display: block;
       position: fixed;
-      left: 0;
-      top: 0;
+      top: 0; left: 0;
       width: 100vw;
       height: 100vh;
       z-index: 0;
-      pointer-events: none;
-      background: radial-gradient(circle at 0 0, #233e53 0 30%, #3a1d2e 70%);
-    }
-    #star-canvas {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 10;
-      display: block;
     }
   </style>
 </head>
 <body>
-  <div id="star-bg"></div>
-  <canvas id="star-canvas"></canvas>
-  <script>
-    const canvas = document.getElementById('star-canvas');
-    const ctx = canvas.getContext('2d');
-    let w = window.innerWidth, h = window.innerHeight;
-    canvas.width = w;
-    canvas.height = h;
+<canvas id="cloud-canvas"></canvas>
+<script>
+class CloudBackground {
+  constructor(canvasId, bgColor = '#222') {
+    this.canvas = document.getElementById(canvasId);
+    this.ctx = this.canvas.getContext('2d');
+    this.bgColor = bgColor;
+    // 固定參數
+    this.cloudRadius = 60;
+    this.cloudLines = 7;
+    this.colGap = this.cloudRadius * 2.1;
+    this.rowGap = this.cloudRadius * 0.9;
+    this.strokeColor = 'rgba(180,180,180,0.5)';
+    this.cloudFloatX = 0;
+    this.cloudFloatY = 10;
+    this.cloudFloatSpeed = 0.002;
+    this.clouds = [];
+    this._resizeHandler = this._onResize.bind(this);
+    window.addEventListener('resize', this._resizeHandler);
+    this._onResize();
+    this._animate();
+  }
 
-    // 星空参数
-    const STAR_DENSITY = 0.00035;
-    let STAR_NUM = Math.floor(w * h * STAR_DENSITY);
-    const STAR_COLORS = ['#fff', '#ffd700', '#87ceeb', '#ff69b4', '#00ffea', '#ffa500'];
-    const stars = [];
-    const center = { x: w / 2, y: h / 2 };
+  _onResize() {
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+    this._updateClouds();
+  }
 
-    // 空间参数，随屏幕自适应
-    function getFov() {
-      return Math.min(w, h) * 1.1;
+  _drawCloud(x, y, r, lines, phase) {
+    const ctx = this.ctx;
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(x, y, r + (lines-1)*6, Math.PI, 0, false);
+    ctx.closePath();
+    ctx.clip();
+    for(let i=0; i<lines; i++) {
+      ctx.beginPath();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = `rgba(180,180,180,0.7)`;
+      let rr = r + i*6 + Math.sin(phase + i)*2;
+      ctx.arc(x, y, rr, Math.PI, 0, false);
+      ctx.stroke();
     }
-    function getStarSize() {
-      return Math.max(1.2, Math.min(w, h) / 900 * 2.2);
-    }
-    function getWanderRadius() {
-      return Math.max(0.8, Math.min(w, h) / 900 * 2.5);
-    }
-    function getFlickerSpeed() {
-      return Math.max(0.5, Math.min(w, h) / 900 * 1.2);
-    }
-    const Z_NEAR = 0.2;
-    const Z_FAR = 1.0;
-    const Z_RANGE = Z_FAR - Z_NEAR;
+    ctx.restore();
+  }
 
-    // 星星空间分布
-    function randomStar() {
-      const theta = Math.random() * 2 * Math.PI;
-      const radius = Math.random() * 0.5 + 0.2;
-      const z0 = Math.random() * Z_RANGE + Z_NEAR; // 初始z0
-      const size = getStarSize() * (Math.random() * 1.2 + 0.7);
-      const color = STAR_COLORS[Math.floor(Math.random() * STAR_COLORS.length)];
-      const flickerSpeed = getFlickerSpeed() * (Math.random() * 1.2 + 0.7);
-      const wanderPhase = Math.random() * Math.PI * 2;
-      return {
-        theta,
-        radius,
-        z0,
-        size,
-        color,
-        flickerSpeed,
-        flickerPhase: Math.random() * Math.PI * 2,
-        wanderPhase,
-        wanderSpeed: Math.random() * 0.5 + 0.15,
-        wanderRadius: getWanderRadius() * (Math.random() * 1.1 + 0.5)
-      };
+  _createCloudImage(r, lines) {
+    const size = r * 2 + 4;
+    const offCanvas = document.createElement('canvas');
+    offCanvas.width = offCanvas.height = size;
+    const offCtx = offCanvas.getContext('2d');
+    for(let i=lines-1; i>=0; i--) {
+      let rr = (r/(lines-1)) * i;
+      offCtx.save();
+      offCtx.beginPath();
+      offCtx.arc(size/2, size/2, rr, Math.PI, 0, false);
+      offCtx.closePath();
+      offCtx.fillStyle = this.bgColor;
+      offCtx.fill();
+      offCtx.lineWidth = 2;
+      offCtx.strokeStyle = this.strokeColor;
+      offCtx.stroke();
+      offCtx.restore();
     }
+    return offCanvas;
+  }
 
-    function initStars() {
-      stars.length = 0;
-      STAR_NUM = Math.floor(w * h * STAR_DENSITY);
-      for (let i = 0; i < STAR_NUM; i++) {
-        stars.push(randomStar());
+  _generateClouds(w, h, r, rowGap, colGap, lines) {
+    const clouds = [];
+    let rows = Math.ceil(h / (rowGap * 0.5)) + 4;
+    let cols = Math.ceil(w / colGap) + 4;
+    for(let i=0; i<rows; i++) {
+      for(let j=0; j<cols; j++) {
+        let offsetX = (i%2) * (colGap/2);
+        let x = j*colGap + offsetX;
+        let y = h - i*rowGap*0.5;
+        let image = this._createCloudImage(r, lines);
+        clouds.push({x, y, r, image, row: i, col: j});
       }
     }
-    initStars();
+    clouds.sort((a, b) => b.row - a.row || a.col - b.col);
+    return clouds;
+  }
 
-    // 监听窗口变化
-    window.addEventListener('resize', () => {
-      w = window.innerWidth;
-      h = window.innerHeight;
-      canvas.width = w;
-      canvas.height = h;
-      center.x = w / 2;
-      center.y = h / 2;
-      initStars();
-    });
+  _updateClouds() {
+    this.clouds = this._generateClouds(
+      this.canvas.width,
+      this.canvas.height,
+      this.cloudRadius,
+      this.rowGap,
+      this.colGap,
+      this.cloudLines
+    );
+  }
 
-    // 动画渲染
-    let lastScrollY = window.scrollY || window.pageYOffset;
-    function render() {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const time = performance.now() * 0.002;
-      // 用累计滚动距离决定z轴偏移
-      const scrollSum = scrollY;
-      drawStars(time, scrollSum);
-      lastScrollY = scrollY;
-      requestAnimationFrame(render);
+  _animate() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    let t = Date.now() * this.cloudFloatSpeed;
+    for(let i=0; i<this.clouds.length; i++) {
+      let c = this.clouds[i];
+      let phase = t + (c.x + c.y) * 0.002;
+      let dx = Math.sin(phase) * this.cloudFloatX;
+      let dy = Math.cos(phase*0.7) * this.cloudFloatY;
+      let size = c.image.width;
+      this.ctx.drawImage(c.image, c.x + dx - size/2, c.y + dy);
     }
+    requestAnimationFrame(this._animate.bind(this));
+  }
 
-    // 绘制星星
-    function drawStars(time, scrollSum) {
-      ctx.clearRect(0, 0, w, h);
-      // 背景已由div实现，无需再绘制
+  destroy() {
+    window.removeEventListener('resize', this._resizeHandler);
+  }
+}
 
-      // 每像素滚动对应z轴推进
-      const zRangePerPx = Z_RANGE / h;
+// 用法示例：
+new CloudBackground('cloud-canvas', '#111');
 
-      for (const star of stars) {
-        // 环形映射z，保证无论scrollSum多少都能正常分布
-        let z = star.z0 + scrollSum * zRangePerPx;
-        // 环形流动
-        z = ((z - Z_NEAR) % Z_RANGE + Z_RANGE) % Z_RANGE + Z_NEAR;
-
-        // 真实空间投影到屏幕
-        const FOV = getFov();
-        const planeR = star.radius * FOV;
-        const wander = star.wanderRadius * Math.sin(time * star.wanderSpeed + star.wanderPhase);
-        const proj = FOV / z;
-        const x = center.x + (planeR + wander) * Math.cos(star.theta) * proj / FOV;
-        const y = center.y + (planeR + wander) * Math.sin(star.theta) * proj / FOV;
-
-        // 近大远小
-        const size = Math.max(0.5, star.size * proj / FOV);
-
-        // 闪烁
-        const flicker = 0.7 + 0.3 * Math.sin(time * star.flickerSpeed + star.flickerPhase);
-
-        // 中心淡化区域缩小
-        let fade = 1;
-        const fadeRadius = Math.min(w, h) * 0.09;
-        const distToCenter = Math.sqrt((x - center.x) ** 2 + (y - center.y) ** 2);
-        if (distToCenter < fadeRadius) {
-          fade = Math.max(0, distToCenter / fadeRadius);
-        }
-
-        ctx.save();
-        ctx.globalAlpha = fade * flicker;
-        ctx.beginPath();
-        ctx.arc(x, y, Math.abs(size * flicker), 0, 2 * Math.PI);
-        ctx.fillStyle = star.color;
-        ctx.shadowColor = star.color;
-        ctx.shadowBlur = 8 * flicker;
-        ctx.fill();
-        ctx.restore();
-      }
-    }
-
-    render();
-  </script>
+</script>
 </body>
 </html>
