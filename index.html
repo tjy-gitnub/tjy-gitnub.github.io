@@ -66,8 +66,9 @@ if( location.search.includes('debug') ){
 </svg>
     </a>
     
-    <canvas id="cloud-canvas" style="position: fixed;z-index: -1;width: 100%;height: 100%;top: 0;left: 0;"></canvas>
-    <div class="lay vtxt first">
+    <!-- <canvas id="cloud-canvas" style="position: fixed;z-index: -1;width: 100%;height: 100%;top: 0;left: 0;"></canvas> -->
+    <div class="lay vtxt first" style="position: relative;">
+        <canvas id="cloud-canvas" style="position: absolute;z-index: -1;width: 100%;height: 100%;top: 0;left: 0;"></canvas>
         <div style="width: max-content;text-shadow: #00000050 0 0 20px;
         ">
             
@@ -146,7 +147,7 @@ if( location.search.includes('debug') ){
         <div style="width: max-content;text-shadow: #00000050 0 0 20px;">
         <p style="font-size: 60px;">幸会！👋</p>
         <p style="font-size: 35px;">欢迎来到星源的个人主页</p>
-        <p style="font-size: 17px;color: #bbb;">本网页所有信息仅供参考，不保证其真实性、正确性</p></div>
+        <p style="font-size: 17px;opacity: 0.5;">本网页所有信息仅供参考，不保证其真实性、正确性</p></div>
     </div>
     <div id="exp" class="lay">
         <p style="font-size: 50px;text-align: center;margin-bottom: 100px;" class="vtxt"><nobr>人生主要</nobr><nobr>履历与成就</nobr></p>
@@ -166,13 +167,13 @@ if( location.search.includes('debug') ){
     </div>
     <div class="lay">
         <div class="card rotate">
-            <p style="font-size: 40px;" class="tit center"><span class="shine" style="--color:#3a8fe9;--colorshine:#8feaff;--speed:4;">会使用各种语言</span></p>
+            <p style="font-size: 40px;" class="tit center"><span class="shine" style="--color:#528fd0;--colorshine:#7bebff;--speed:4;">会使用各种语言</span></p>
             <div class="body" id="jt">
                 <div><p style="margin: 0;">Scratch</p>
-                    <div><div style="background: #ffab19;width: 100%;height: 100%;border-radius: 10px;"
+                    <div><div style="background: #efaa32;width: 100%;height: 100%;border-radius: 10px;"
                         class="highlight width"></div></div></div>
                 <div><p style="margin: 0;">Markdown</p>
-                    <div><div style="background: #bebebe;width: 85%;height: 100%;border-radius: 10px;"
+                    <div><div style="background: #d1cf4e;width: 85%;height: 100%;border-radius: 10px;"
                         class="highlight width"></div></div></div>
                 <div><p style="margin: 0;">CSS</p>
                     <div><div style="background: #4061e8;width: 77%;height: 100%;border-radius: 10px;"
@@ -181,7 +182,7 @@ if( location.search.includes('debug') ){
                     <div><div style="background: #d66022;width: 68%;height: 100%;border-radius: 10px;"
                         class="highlight width"></div></div></div>
                 <div><p style="margin: 0;">Javascript</p>
-                    <div><div style="background: #e9c900;width: 46%;height: 100%;border-radius: 10px;"
+                    <div><div style="background: #f1d20b;width: 46%;height: 100%;border-radius: 10px;"
                         class="highlight width"></div></div></div>
                 <div><p style="margin: 0;">Python</p>
                     <div><div style="background: #4db8a6;width: 35%;height: 100%;border-radius: 10px;"
@@ -190,16 +191,16 @@ if( location.search.includes('debug') ){
                     <div><div style="background: #6c94c9;width: 30%;height: 100%;border-radius: 10px;"
                         class="highlight width"></div></div></div>
                 <div><p style="margin: 0;">Cmd</p>
-                    <div><div style="background: #aaaaaa;width: 28%;height: 100%;border-radius: 10px;"
+                    <div><div style="background: #9c9c9c;width: 28%;height: 100%;border-radius: 10px;"
                         class="highlight width"></div></div></div>
                 <div><p style="margin: 0;">C#</p>
-                    <div><div style="background: #64047f;width: 24%;height: 100%;border-radius: 10px;"
+                    <div><div style="background: #8e16a7;width: 24%;height: 100%;border-radius: 10px;"
                         class="highlight width"></div></div></div>
                 <div><p style="margin: 0;">Vbs</p>
                     <div><div style="background: #a2e0ff;width: 7%;height: 100%;border-radius: 10px;"
                         class="highlight width"></div></div></div>
                 <div><p style="margin: 0;">Powershell</p>
-                    <div><div style="background: #3e6dbf;width: 5%;height: 100%;border-radius: 10px;"
+                    <div><div style="background: #2f71ce;width: 5%;height: 100%;border-radius: 10px;"
                         class="highlight width"></div></div></div>
             </div>
         </div>
@@ -307,6 +308,29 @@ if( location.search.includes('debug') ){
     </div>
     <div class="lay">
         <div class="card rotate prj">
+            <p class="tit">Caph</p>
+            <div class="body">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>star 30+</span>
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
+                    <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                  </svg>c#, py, web</span>
+                <p>AI 聊天侧边栏，致力于打造 Windows Copilot 助手的平替。支持多种格式渲染，支持工具调用。可使用 Github Models 的免费模型。</p>
+                <div class="ops">
+                    <a href="https://github.com/tjy-gitnub/caph/releases" class="a"><svg height="100%" viewBox="128 0 704 1024" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M160,576C160,567.333 163.167,559.833 169.5,553.5C175.833,547.167 183.333,544 192,544C200.667,544 208.167,547.167 214.5,553.5L448,786.5L448,32C448,23.3334 451.167,15.8334 457.5,9.5C463.833,3.16669 471.333,0 480,0C488.667,0 496.167,3.16669 502.5,9.5C508.833,15.8334 512,23.3334 512,32L512,786.5L745.5,553.5C751.833,547.167 759.333,544 768,544C776.667,544 784.167,547.167 790.5,553.5C796.833,559.833 800,567.333 800,576C800,584.667 796.833,592.167 790.5,598.5L504,885C500.333,888.667 496.75,891.417 493.25,893.25C489.75,895.083 485.333,896 480,896C474.667,896 470.25,895.083 466.75,893.25C463.25,891.417 459.667,888.667 456,885L169.5,598.5C163.167,592.167 160,584.667 160,576ZM800,960C808.667,960 816.167,963.167 822.5,969.5C828.833,975.833 832,983.333 832,992C832,1000.67 828.833,1008.17 822.5,1014.5C816.167,1020.83 808.667,1024 800,1024L160,1024C151.333,1024 143.833,1020.83 137.5,1014.5C131.167,1008.17 128,1000.67 128,992C128,983.333 131.167,975.833 137.5,969.5C143.833,963.167 151.333,960 160,960Z" fill="currentColor" fill-opacity="1">
+                        </path>
+                    </svg>前往下载</a>
+                    <a href="https://github.com/tjy-gitnub/caph" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg><span>在 Github <nobr>查看</nobr></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lay">
+        <div class="card rotate prj">
             <p class="tit">Tapple 滚动监测</p>
             <div class="body">
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
@@ -325,7 +349,7 @@ if( location.search.includes('debug') ){
             </div>
         </div>
     </div>
-    <div class="lay">
+    <!-- <div class="lay">
         <div class="card rotate prj">
             <p class="tit">Meteor</p>
             <div class="body">
@@ -335,20 +359,38 @@ if( location.search.includes('debug') ){
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
                   <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
                 </svg>python, html, js</span>
-                <p><span style="color: #aaa;">尚不完善，有考虑修改开发方向</span><br>演示文稿 (PPT) 制作器。作为亮点，Meteor 制作的演示文稿能<b>随时随地</b>播放，不需要重复安装软件。详见 Github 中介绍。</p>
+                <p><span style="opacity: 0.5;">尚不完善，有考虑修改开发方向</span><br>演示文稿 (PPT) 制作器。作为亮点，Meteor 制作的演示文稿能<b>随时随地</b>播放，不需要重复安装软件。详见 Github 中介绍。</p>
                 <div class="ops">
-                <a href="https://github.com/starry-source/meteor/releases" class="a"><svg height="100%" viewBox="128 0 704 1024" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path d="M160,576C160,567.333 163.167,559.833 169.5,553.5C175.833,547.167 183.333,544 192,544C200.667,544 208.167,547.167 214.5,553.5L448,786.5L448,32C448,23.3334 451.167,15.8334 457.5,9.5C463.833,3.16669 471.333,0 480,0C488.667,0 496.167,3.16669 502.5,9.5C508.833,15.8334 512,23.3334 512,32L512,786.5L745.5,553.5C751.833,547.167 759.333,544 768,544C776.667,544 784.167,547.167 790.5,553.5C796.833,559.833 800,567.333 800,576C800,584.667 796.833,592.167 790.5,598.5L504,885C500.333,888.667 496.75,891.417 493.25,893.25C489.75,895.083 485.333,896 480,896C474.667,896 470.25,895.083 466.75,893.25C463.25,891.417 459.667,888.667 456,885L169.5,598.5C163.167,592.167 160,584.667 160,576ZM800,960C808.667,960 816.167,963.167 822.5,969.5C828.833,975.833 832,983.333 832,992C832,1000.67 828.833,1008.17 822.5,1014.5C816.167,1020.83 808.667,1024 800,1024L160,1024C151.333,1024 143.833,1020.83 137.5,1014.5C131.167,1008.17 128,1000.67 128,992C128,983.333 131.167,975.833 137.5,969.5C143.833,963.167 151.333,960 160,960Z" fill="currentColor" fill-opacity="1">
-                    </path>
-                  </svg>前往下载</a>
-                <a href="https://github.com/starry-source/meteor" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                  </svg><span>在 Github <nobr>查看</nobr></span></a></div>
+                    <a href="https://github.com/starry-source/meteor/releases" class="a"><svg height="100%" viewBox="128 0 704 1024" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M160,576C160,567.333 163.167,559.833 169.5,553.5C175.833,547.167 183.333,544 192,544C200.667,544 208.167,547.167 214.5,553.5L448,786.5L448,32C448,23.3334 451.167,15.8334 457.5,9.5C463.833,3.16669 471.333,0 480,0C488.667,0 496.167,3.16669 502.5,9.5C508.833,15.8334 512,23.3334 512,32L512,786.5L745.5,553.5C751.833,547.167 759.333,544 768,544C776.667,544 784.167,547.167 790.5,553.5C796.833,559.833 800,567.333 800,576C800,584.667 796.833,592.167 790.5,598.5L504,885C500.333,888.667 496.75,891.417 493.25,893.25C489.75,895.083 485.333,896 480,896C474.667,896 470.25,895.083 466.75,893.25C463.25,891.417 459.667,888.667 456,885L169.5,598.5C163.167,592.167 160,584.667 160,576ZM800,960C808.667,960 816.167,963.167 822.5,969.5C828.833,975.833 832,983.333 832,992C832,1000.67 828.833,1008.17 822.5,1014.5C816.167,1020.83 808.667,1024 800,1024L160,1024C151.333,1024 143.833,1020.83 137.5,1014.5C131.167,1008.17 128,1000.67 128,992C128,983.333 131.167,975.833 137.5,969.5C143.833,963.167 151.333,960 160,960Z" fill="currentColor" fill-opacity="1">
+                        </path>
+                    </svg>前往下载</a>
+                    <a href="https://github.com/starry-source/meteor" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg><span>在 Github <nobr>查看</nobr></span></a>
+                </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="lay">
         <div class="card rotate prj prjlist">
+            <p class="tit">Meteor</p>
+            <div class="body">
+                <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
+                  <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+                </svg>python, html, js</span>
+                <p><span style="opacity: 0.5;">有考虑修改开发方向</span><br>演示文稿 (PPT) 制作器。作为亮点，Meteor 制作的演示文稿能随时随地播放，不需要重复安装软件。</p>
+                <div class="ops">
+                    <a href="https://github.com/starry-source/meteor/releases" class="a"><svg height="100%" viewBox="128 0 704 1024" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path d="M160,576C160,567.333 163.167,559.833 169.5,553.5C175.833,547.167 183.333,544 192,544C200.667,544 208.167,547.167 214.5,553.5L448,786.5L448,32C448,23.3334 451.167,15.8334 457.5,9.5C463.833,3.16669 471.333,0 480,0C488.667,0 496.167,3.16669 502.5,9.5C508.833,15.8334 512,23.3334 512,32L512,786.5L745.5,553.5C751.833,547.167 759.333,544 768,544C776.667,544 784.167,547.167 790.5,553.5C796.833,559.833 800,567.333 800,576C800,584.667 796.833,592.167 790.5,598.5L504,885C500.333,888.667 496.75,891.417 493.25,893.25C489.75,895.083 485.333,896 480,896C474.667,896 470.25,895.083 466.75,893.25C463.25,891.417 459.667,888.667 456,885L169.5,598.5C163.167,592.167 160,584.667 160,576ZM800,960C808.667,960 816.167,963.167 822.5,969.5C828.833,975.833 832,983.333 832,992C832,1000.67 828.833,1008.17 822.5,1014.5C816.167,1020.83 808.667,1024 800,1024L160,1024C151.333,1024 143.833,1020.83 137.5,1014.5C131.167,1008.17 128,1000.67 128,992C128,983.333 131.167,975.833 137.5,969.5C143.833,963.167 151.333,960 160,960Z" fill="currentColor" fill-opacity="1">
+                        </path>
+                    </svg>前往下载</a>
+                    <a href="https://github.com/starry-source/meteor" class="a"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg><span>在 Github <nobr>查看</nobr></span></a>
+                </div>
+            </div>
+            <hr>
             <p class="tit">Nikov 在线工具</p>
             <div class="body">
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
@@ -364,7 +406,10 @@ if( location.search.includes('debug') ){
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                   </svg><span>在 Github <nobr>查看</nobr></span></a></div>
             </div>
-            <hr>
+        </div>
+    </div>
+    <div class="lay">
+        <div class="card rotate prj prjlist">
             <p class="tit">Chat bowl</p>
             <div class="body">
                 <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-code-slash" viewBox="0 0 16 16">
@@ -408,11 +453,14 @@ if( location.search.includes('debug') ){
         <div style="display: flex;flex-direction: column;flex-grow: 1;align-items: center;justify-content: center;">
         <img src="st.svg" style="height: 20vh;">
             <p style="margin-top: 10px;color: #888;">2025 年 7 月</p>
-        <div style="margin-top: 20px;">
-            <p>背景来自 <a href="http://www.microsoft.com/zh-cn/bing/bing-wallpaper" class="a jump">Bing Wallpaper</a></p>
+        <div style="margin-top: 25px;padding: 0 20px;">
+            <p>背景<span style="color: #888;">(/bgd.jpg, /bgl.jpg)</span>来自 <a href="http://www.microsoft.com/zh-cn/bing/bing-wallpaper" class="a jump">Bing Wallpaper</a></p>
             <p>开头「星源」二字书法参考于 <a href="http://www.shufami.com/" class="a jump">书法迷</a></p>
+            <p>感谢强大的 Github Copilot</p>
+            <p style="font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-variant-emoji: emoji;">
+                感谢 Github Pages 的托管服务，❤来自中国大陆</p>
         </div></div>
-        <p style="font-size: 18px;color: #888;margin-bottom: 5px;">風起云覆苍龍騰凤翥<br>引峰嚮月星海阅天書</p>
+        <p style="font-size: 18px;color: #888;margin-bottom: 5px;text-align: center;">风起雲云覆苍龍腾凤翥<br>引鋒向月星海阅天书</p>
         <!-- <p style="font-size: 18px;color: #555;margin-bottom: 5px;">千星源起婵娟银河皎皎耀天黛<br>万山越尽扶摇东风浩浩舞乾坤</p> -->
     </div>
     <script src="main.js"></script>

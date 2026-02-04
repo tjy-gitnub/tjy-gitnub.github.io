@@ -8,7 +8,7 @@ html{
 body {
     padding: 0;
     margin: 0;
-    background: url(bgd.jpg) center;
+    background: url(bgdark.jpg) center;
     background-attachment: fixed;
     background-size: cover;
     background-color: #222;
@@ -18,6 +18,14 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: auto;
+}
+
+@media(prefers-color-scheme: light){
+  body {
+      background: url(bglight.jpg) center;
+      --text: #000;
+      --bgt: #eeeeeeb0;
+  }
 }
 
 .a {

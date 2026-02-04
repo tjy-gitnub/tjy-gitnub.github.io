@@ -137,7 +137,7 @@ let g_highlight = Array.from(document.querySelectorAll('.highlight,.card'));
 let g_percent = Array.from(document.querySelectorAll('.shine'));
 
 function scBody() {
-  let t = window.scrollY || window.pageYOffset;
+  const t = 0;
   const winH = window.innerHeight;
 
   for (let i = 0; i < g_highlight.length; i++) {
@@ -160,11 +160,22 @@ function scBody() {
       `${((winH + t - boxTop) / (winH + boxHeight)) * 100}%`
     );
   }
+
+  if (document.body.scrollTop > ph) {
+    if (cloudBg.playing){
+      cloudBg.playing=false;
+    }
+  } else {
+    if (!cloudBg.playing){
+      cloudBg.playing=true;
+      cloudBg._animate();
+    }
+  }
 }
 
 // 初始化
 function init() {
-  ph = ldb.clientHeight;
+  ph = document.body.clientHeight;
   let cird = Math.sqrt(ldb.clientHeight ** 2 + ldb.clientWidth ** 2) + 20;
   rootStyle.setProperty("--ph", `${ph}px`);
   rootStyle.setProperty("--cird", `${cird}px`);
@@ -183,7 +194,6 @@ function init() {
 init();
 
 // 事件监听优化
-
 class CloudBackground {
   constructor(canvasId, bgColor = '#222') {
     this.canvas = document.getElementById(canvasId);
@@ -199,6 +209,7 @@ class CloudBackground {
     this.cloudFloatY = 10;
     this.cloudFloatSpeed = 0.002;
     this.clouds = [];
+    this.playing=true;
     this._resizeHandler = this._onResize.bind(this);
     window.addEventListener('resize', this._resizeHandler);
     this._onResize();
@@ -279,6 +290,7 @@ class CloudBackground {
   }
 
   _animate() {
+    if(!this.playing) return;
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     let t = Date.now() * this.cloudFloatSpeed;
     for(let i=0; i<this.clouds.length; i++) {
