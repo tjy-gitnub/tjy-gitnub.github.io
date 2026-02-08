@@ -97,8 +97,8 @@ hr {
     --c2: #73dae7;
     --c3: #eb78e9;
 
-    background-color: #232323a7;
-    backdrop-filter: saturate(4) contrast(1.2) brightness(0.7) blur(40px);
+    background-color: #252525c7;
+    backdrop-filter: saturate(3) contrast(1.2) blur(40px);
     border-radius: var(--arbutus-border-radius-accent);
     box-shadow: #00000080 0 7px 14px;
     /* border: 2px solid #88888830; */

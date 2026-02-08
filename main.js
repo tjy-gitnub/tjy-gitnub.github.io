@@ -13,7 +13,7 @@ canvas.height = h;
 // 星空参数
 const STAR_DENSITY_K = 0.25;
 let STAR_NUM;
-const STAR_COLORS = ['rgb(30, 193, 225)', 'rgb(49, 151, 241)', 'rgb(222, 196, 77)', 'rgb(217, 101, 244)'];
+const STAR_COLORS = ['rgba(198, 231, 238, 1)', 'rgba(76, 163, 238, 1)', 'rgba(240, 221, 136, 1)', 'rgba(177, 56, 207, 1)'];
 const stars = [];
 const center = { x: w / 2, y: h / 2 };
 

@@ -32,7 +32,7 @@ body.light {
     --text: #000;
     --bgt: #eeeeeeb0;
     --theme: #005fba;
-    --sele: #005fba50;
+    --sele: #2181db50;
     --cir: #eee;
 }
 
@@ -44,6 +44,7 @@ body.light {
 
 a.jump {
     color: var(--theme);
+    transition: 80ms;
 }
 
 a.jump:hover {
@@ -113,6 +114,12 @@ hr {
     top: calc(50% - 150px);
 } */
 
+.tittext{
+    color: var(--text);
+    width: max-content;
+    text-shadow: var(--bgt) 0 0 20px;
+}
+
 .card {
     --arbutus-border-radius-accent: 25px;
     --accent-border-width: 4px;
@@ -122,7 +129,7 @@ hr {
     --c3: #eb78e9;
     position: relative;
     background-color: #232020;
-    box-shadow: #00000070 0 5px 18px;
+    box-shadow: #00000070 0 5px -5px 25px;
     border-radius: var(--arbutus-border-radius-accent);
     display: flex;
     flex-direction: column;
@@ -260,7 +267,7 @@ button:active{
         radial-gradient(circle at 30% 30%, #197e7430, #00000000 20%),
         radial-gradient(circle at 70% 60%, #9e751730, #00000000 25%),
         radial-gradient(circle at 20% 70%, #2b6e4530, #00000000 25%),
-        radial-gradient(circle at 0 0, #233e53 0 30%, #3a1d2e 70%);
+        radial-gradient(circle at 0 0, #154063 0 30%, #4d1f3a 70%);
     background-size: cover;
     background-position: center;
     overflow-y: scroll;
@@ -279,18 +286,19 @@ button:active{
 
 body.light>#ldb{
     background-image: 
-    radial-gradient(circle at 50% 40%, transparent 0 50%, #ffffff20),
+    radial-gradient(circle at 50% 40%, transparent 0 50%, #ffffff50),
     radial-gradient(circle at 30% 30%,#32ffea30,#00000000 20%),
     radial-gradient(circle at 70% 60%,#ffbf2830,#00000000 25%),
     radial-gradient(circle at 20% 70%,#3da86630,#00000000 25%),
+        /* radial-gradient(circle at 0 0, #154063 0 30%, #4d1f3a 70%); */
     radial-gradient(circle at 0 0,#acc6d8 0 30%,#d0b7cd 70%);
     color: #000;
 }
-body.light>#ldb>.stscbg *{
+/* body.light>#ldb>.stscbg *{
     fill: #00000090 !important;
-}
+} */
 #ldb>.stscbg *{
-    fill: #ffffff90;
+    fill: #ffffff70;
 }
 body>#ldb>svg{
     position: fixed;
@@ -307,6 +315,10 @@ body>#ldb>.stsc{
     mask-image: radial-gradient(circle at 50% 110%, white var(--r), transparent var(--r) 100%);
 }
 
+body.light>#ldb>.stsc{
+    filter: contrast(0.7) brightness(0);
+}
+
 #ldb>.ld{
     position: fixed;
     bottom: 30px;
@@ -317,7 +329,7 @@ body>#ldb>.stsc{
     border-color: transparent;
     font-size: 17px;
     background: var(--bgt);
-    box-shadow: 0 0 5px 2px var(--bgt);
+    box-shadow: 0 0 8px 2px var(--bgt);
     padding: 13px 22px;
     
     --arbutus-border-radius-accent: 100px;
@@ -448,7 +460,6 @@ body>.lay.first>*{
 
 body.show>.lay.first{
     background-color: transparent;
-    
 }
 
 body.show>.lay.first>*{
@@ -588,7 +599,7 @@ body.light .card{
     width: calc(100% - 200px);
     min-width: 400px;
     max-width: 800px;
-    background-color: #33333330;
+    background-color: #22222220;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     /* column-count: auto; */
@@ -598,12 +609,12 @@ body.light .card{
     justify-items: center;
     gap: 10px;
     border-radius: 20px;
-    backdrop-filter: blur(15px) brightness(1.2);
+    backdrop-filter: blur(15px);
 }
 
 #hab>.cd {
     /* margin: 5px; */
-    background-color: #00000050;
+    background-color: #ffffff90;
     width: 100%;
     min-height: 80px;
     border-radius: 18px;
@@ -611,7 +622,7 @@ body.light .card{
     align-items: center;
     user-select: none;
     overflow: hidden;
-    --text: #f0f0f0;
+    --text: #000;
     color: var(--text);
 }
 
