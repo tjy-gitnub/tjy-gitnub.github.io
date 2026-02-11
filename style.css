@@ -86,14 +86,14 @@ p {
 
 hr {
     width: calc(100% - 40px);
-    background-color: #7f7f7f40;
+    background-color: var(--text);
+    opacity: 0.1;
     border: none;
     height: 1px;
     border-radius: 10px;
 }
 
 .chart>hr{
-    
     margin: 10px 0 0 5px;
 }
 
@@ -129,7 +129,7 @@ hr {
     --c3: #eb78e9;
     position: relative;
     background-color: #232020;
-    box-shadow: #00000070 0 5px -5px 25px;
+    box-shadow: #000000d0 0 8px 38px -10px;
     border-radius: var(--arbutus-border-radius-accent);
     display: flex;
     flex-direction: column;
@@ -143,7 +143,7 @@ hr {
 
 body.light .card{
     background-color: #eee7e6;
-    box-shadow: #00000030 0 5px 15px;
+    box-shadow: #00000050 0 8px 38px -10px;
     color: #000;
 }
 
@@ -431,7 +431,7 @@ body>#ldb>.bg{
     top: var(--cirt);
     transform-origin: 50% 100%;
     transform: scale(0);
-    background-color: var(--cir);
+    background-color: var(--cir) !important;
     transition: 700ms ease-out;
     z-index: 10;
     border-radius: 50%;
@@ -702,7 +702,8 @@ body.light .card{
 }
 
 .card.prj.prjlist>.tit{
-    font-size: 25px;
+    font-size: 27px;
+    margin-bottom: 15px;
 }
 .card.prj.prjlist .ops>.a>svg{
     font-size: 20px;
@@ -870,11 +871,11 @@ body.light #tgtheme{
 }
 
 .card{
-    background-color: #252525c7;
+    background-color: #252525cf;
     backdrop-filter: saturate(3) contrast(1.1) blur(40px);
 }
 
 body.light .card{
-    background-color: #eae3e2c7;
+    background-color: #e2e3eacf;
     backdrop-filter: saturate(3) contrast(1.1) blur(40px);
 }
